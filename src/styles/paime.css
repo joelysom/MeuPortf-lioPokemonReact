@@ -1,0 +1,155 @@
+.paime-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Canvas 3D fica atrás */
+.paime-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none; /* impede o canvas de bloquear cliques nos botões */
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/bg/bluedot.png');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+/* Botões */
+.button {
+  position: absolute;
+  width: 200px; /* Ajustado para 10x maior */
+  height: 200px; /* Ajustado para 10x maior */
+  cursor: pointer;
+  z-index: 10;
+}
+
+.button.top-left {
+  top: 10px;
+  left: 10px;
+}
+
+.button.top-right {
+  top: 10px;
+  right: 10px;
+}
+
+.button.bottom-left {
+  bottom: 10px;
+  left: 10px;
+}
+
+.button.bottom-right {
+  bottom: 10px;
+  right: 10px;
+}
+
+/* Added styles for TrainerCard modal with slide-up animation */
+/* ===== MODAL (fundo) ===== */
+.trainer-card-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  opacity: 0;
+
+  /* Frosted glass inicial (invisível no começo) */
+  background: rgba(15, 15, 15, 0);
+  backdrop-filter: blur(0px) saturate(180%);
+  -webkit-backdrop-filter: blur(0px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0);
+
+  /* animação de aparição suave do blur */
+  animation: fade-blur-in 0.4s ease forwards;
+}
+
+/* Animação do blur suave de fundo */
+@keyframes fade-blur-in {
+  0% {
+    opacity: 0;
+    backdrop-filter: blur(0px) saturate(180%);
+    -webkit-backdrop-filter: blur(0px) saturate(180%);
+    background: rgba(15, 15, 15, 0);
+    border-color: rgba(255, 255, 255, 0);
+  }
+  100% {
+    opacity: 1;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background: rgba(15, 15, 15, 0.35);
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+}
+
+/* ===== CARD DENTRO DO MODAL ===== */
+/* o card real deve estar dentro do componente TrainerCard */
+.trainer-card-modal > * {
+  opacity: 0;
+  transform: translateY(100%);
+  animation: slide-up 0.5s ease forwards;
+  animation-delay: 0.25s; /* começa depois que o blur aparece */
+}
+
+/* Slide normal do card */
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Added styles for Tamagochi modal */
+.tamagochi-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  opacity: 0;
+
+  /* Frosted glass effect */
+  background: rgba(15, 15, 15, 0);
+  backdrop-filter: blur(0px) saturate(180%);
+  -webkit-backdrop-filter: blur(0px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0);
+
+  /* Smooth appearance animation */
+  animation: fade-blur-in 0.4s ease forwards;
+}
+
+@keyframes fade-blur-in {
+  0% {
+    opacity: 0;
+    backdrop-filter: blur(0px) saturate(180%);
+    -webkit-backdrop-filter: blur(0px) saturate(180%);
+    background: rgba(15, 15, 15, 0);
+    border-color: rgba(255, 255, 255, 0);
+  }
+  100% {
+    opacity: 1;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background: rgba(15, 15, 15, 0.35);
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+}

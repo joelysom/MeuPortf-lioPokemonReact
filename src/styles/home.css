@@ -1,0 +1,331 @@
+@font-face {
+  font-family: 'PokemonEmerald';
+  src: url('../assets/fonts/PokemonEmerald.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.pokemon-text {
+  font-family: 'PokemonEmerald', sans-serif;
+}
+
+
+/* Ensure the background covers the entire page without white borders */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.home-container {
+  background-image: url('../assets/bg/bg.svg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh; /* ocupa sempre a altura da tela */
+  width: 100vw;  /* ocupa sempre a largura da tela */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style for the card container and individual cards */
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center; /* Ensure vertical alignment */
+  overflow: visible; /* Permite que o brilho se expanda além do contêiner principal */
+}
+
+.card-wrapper {
+  position: relative; /* Garante que o contexto de empilhamento seja correto */
+  overflow: visible; /* Permite que o brilho se expanda além do contêiner pai */
+  z-index: 1; /* Eleva o nível do contêiner para evitar cortes */
+  transition: transform 0.6s ease, opacity 0.4s ease;
+}
+
+.card-wrapper.active {
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+.card-wrapper:not(.active) {
+  opacity: 1;
+}
+
+.card-wrapper.fade-out {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.card {
+  width: 200px;
+  height: 180px; /* Reduced height */
+  background-color: transparent; /* Make background transparent */
+  border-radius: 10px;
+  box-shadow: none; /* Remove shadow for full transparency */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s;
+  overflow: visible; /* Permite que o brilho se expanda além do card */
+  position: relative; /* Garante que o brilho não seja cortado pelo próprio card */
+  z-index: 2; /* Eleva o nível do card acima do contêiner */
+}
+
+/* Adjust glowing effect to a balanced intensity */
+.card canvas {
+  filter: none; /* Default state without glow */
+  transition: filter 0.3s;
+}
+
+/* Reduce the glow effect specifically for the center card */
+.card-wrapper:nth-of-type(2):hover .card canvas {
+  filter: drop-shadow(0 0 10px gold) drop-shadow(0 0 20px gold); /* Subtle glow for center card */
+}
+
+/* Adjust position of left and right cards */
+.card-wrapper:nth-of-type(1) { /* Left card */
+  transform: translateY(-90px); /* Move further up */
+}
+
+.card-wrapper:nth-of-type(3) { /* Right card */
+  transform: translateY(-90px); /* Move further up */
+}
+
+.card-wrapper:nth-of-type(2) { /* Center card */
+  transform: translateY(40px); /* Move center card down */
+}
+
+.card.shaking {
+  animation: shake 0.5s infinite;
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+.canvas {
+  width: 100%;
+  height: 100%;
+}
+
+/* Style for the hover icon */
+.hover-icon {
+  width: 80px;
+  height: 80px;
+  pointer-events: none; /* Prevent interaction */
+  opacity: 0;
+  position: absolute;
+  transition: opacity 0.3s;
+}
+
+.hover-icon.visible {
+  opacity: 1;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.hover-icon {
+  animation: bounce 1s infinite;
+}
+
+/* Add title styling at the bottom center of the site */
+.site-title {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'PokemonEmerald', sans-serif;
+  font-size: 2rem;
+  color: white;
+  z-index: 10; /* Ensure it appears above other elements */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add subtle shadow for better visibility */
+}
+
+/* Increase the size of the Pokémon Emerald-style dialogue box */
+.dialogue-box {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1200px;
+  padding: 100px 120px; /* Increased padding for a larger box */
+  background: linear-gradient(to bottom, #f8f8f8, #e0e0e0);
+  border: 10px solid #000; /* Thicker border */
+  border-radius: 25px; /* More rounded corners */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6); /* Stronger shadow */
+  font-family: 'PokemonEmerald', sans-serif;
+  font-size: 4rem; /* Larger font size */
+  color: #000;
+  z-index: 100; /* Ensure it appears above other elements */
+  text-align: center;
+}
+
+.canvas-glow {
+  display: none; /* Esconde o glow por padrão */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px; /* Ajuste conforme o modelo */
+  height: 100px; /* Ajuste conforme o modelo */
+  border-radius: 50%;
+  background: radial-gradient(circle, gold 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 5;
+  opacity: 0.7;
+}
+
+.card-wrapper:hover .canvas-glow {
+  display: block; /* Mostra o glow apenas no hover */
+}
+
+.glow-active {
+  animation: glow-blink 1s infinite alternate;
+}
+
+@keyframes glow-blink {
+  0% {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  100% {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.dark-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 50;
+  backdrop-filter: blur(2px);
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.expanding-sphere {
+  position: fixed;
+  width: 200px; /* Aumentado de 120px para 200px */
+  height: 200px; /* Aumentado de 120px para 200px */
+  background: white;
+  border-radius: 50%;
+  z-index: 60;
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.9), 0 0 80px rgba(255, 215, 0, 0.7);
+  transform: translate(-50%, -50%) scale(0);
+  transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+  pointer-events: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.pokemon-gif {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 180px; /* Aumentado para ocupar mais espaço dentro da esfera */
+  height: 180px; /* Aumentado para ocupar mais espaço dentro da esfera */
+  transform: translate(-50%, -50%);
+  z-index: 70;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+}
+
+.pokemon-gif.visible {
+  opacity: 1;
+}
+
+/* Estilos para o contêiner de escolhas e botões */
+.choice-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: absolute;
+  top: -205px; /* Positioned above the dialogue box */
+  right: 0; /* Aligned to the right */
+  z-index: 101; /* Ensure it appears above other elements */
+  padding-right: 20px; /* Add some spacing from the edge */
+}
+
+.choice-button {
+  font-family: 'PokemonEmerald', sans-serif;
+  font-size: 4rem;
+  padding: 10px 20px;
+  background-color: #f8f8f8;
+  border: 4px solid #000;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 7px; /* Space between buttons */
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.choice-button:last-child {
+  margin-bottom: 0; /* Remove margin for the last button */
+}
+
+.choice-button:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.1);
+}
+
+.choice-button:active {
+  background-color: #d0d0d0;
+  transform: scale(0.95);
+}
+
+.animation-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  z-index: 9999; /* Ensure it is above all other elements */
+}
+
+.animation-container.fadeout {
+  animation: flash-fadeout 1s forwards;
+}
+
+@keyframes flash-fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

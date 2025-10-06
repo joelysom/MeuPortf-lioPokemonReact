@@ -1,0 +1,281 @@
+@font-face {
+  font-family: 'PokemonEmerald';
+  src: url('../assets/fonts/PokemonEmerald.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.pokemonText {
+  font-family: 'PokemonEmerald', sans-serif;
+}
+
+.homeContainer {
+  background-image: url('../assets/bg/bg.svg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardContainer {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+  overflow: visible;
+}
+
+.cardWrapper {
+  position: relative;
+  overflow: visible;
+  z-index: 1;
+  transition: transform 0.6s ease, opacity 0.4s ease;
+}
+
+.cardWrapperActive {
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+.cardWrapperFadeOut {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.card {
+  width: 200px;
+  height: 180px;
+  background-color: transparent;
+  border-radius: 10px;
+  box-shadow: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s;
+  overflow: visible;
+  position: relative;
+  z-index: 2;
+}
+
+.cardCanvas {
+  filter: none;
+  transition: filter 0.3s;
+}
+
+.cardWrapperHoverCenter:hover .cardCanvas {
+  filter: drop-shadow(0 0 10px gold) drop-shadow(0 0 20px gold);
+}
+
+.cardWrapperNth1 {
+  transform: translateY(-90px);
+}
+
+.cardWrapperNth3 {
+  transform: translateY(-90px);
+}
+
+.cardWrapperNth2 {
+  transform: translateY(40px);
+}
+
+.cardShaking {
+  animation: shake 0.5s infinite;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.hoverIcon {
+  width: 80px;
+  height: 80px;
+  pointer-events: none;
+  opacity: 0;
+  position: absolute;
+  transition: opacity 0.3s;
+  animation: bounce 1s infinite;
+}
+
+.hoverIconVisible {
+  opacity: 1;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.siteTitle {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'PokemonEmerald', sans-serif;
+  font-size: 2rem;
+  color: white;
+  z-index: 10;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.dialogueBox {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1200px;
+  padding: 100px 120px;
+  background: linear-gradient(to bottom, #f8f8f8, #e0e0e0);
+  border: 10px solid #000;
+  border-radius: 25px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+  font-family: 'PokemonEmerald', sans-serif;
+  font-size: 4rem;
+  color: #000;
+  z-index: 100;
+  text-align: center;
+}
+
+.canvasGlow {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle, gold 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 5;
+  opacity: 0.7;
+}
+
+.cardWrapperHover .canvasGlow {
+  display: block;
+}
+
+.glowActive {
+  animation: glowBlink 1s infinite alternate;
+}
+
+@keyframes glowBlink {
+  0% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.2); }
+  100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
+}
+
+.darkOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 50;
+  backdrop-filter: blur(2px);
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.expandingSphere {
+  position: fixed;
+  width: 200px;
+  height: 200px;
+  background: white;
+  border-radius: 50%;
+  z-index: 60;
+  box-shadow: 0 0 40px rgba(255,255,255,0.9), 0 0 80px rgba(255,215,0,0.7);
+  transform: translate(-50%, -50%) scale(0);
+  transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+  pointer-events: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.pokemonGif {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 180px;
+  height: 180px;
+  transform: translate(-50%, -50%);
+  z-index: 70;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+}
+
+.pokemonGifVisible {
+  opacity: 1;
+}
+
+.choiceContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: absolute;
+  top: -205px;
+  right: 0;
+  z-index: 101;
+  padding-right: 20px;
+}
+
+.choiceButton {
+  font-family: 'PokemonEmerald', sans-serif;
+  font-size: 4rem;
+  padding: 10px 20px;
+  background-color: #f8f8f8;
+  border: 4px solid #000;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 7px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.choiceButtonLast {
+  margin-bottom: 0;
+}
+
+.choiceButtonHover {
+  background-color: #e0e0e0;
+  transform: scale(1.1);
+}
+
+.choiceButtonActive {
+  background-color: #d0d0d0;
+  transform: scale(0.95);
+}
+
+.animationContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  z-index: 9999;
+}
+
+.animationContainerFadeout {
+  animation: flashFadeout 1s forwards;
+}
+
+@keyframes flashFadeout {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}

@@ -1,0 +1,334 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Container Principal */
+.pokemonBoxContainer {
+  width: 100vw;
+  height: 100vh;
+  background: url('/assets/bg/gemini_wide.png') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+}
+
+/* Top Navigation */
+.topNav {
+  background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  border-bottom: 2px solid #000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  z-index: 15;
+}
+
+.topNavLeft,
+.topNavRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navButton {
+  background: #fff;
+  border: 2px solid #333;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+}
+
+.navButton:hover {
+  background: #f0f0f0;
+}
+
+.iconButton {
+  background: #fff;
+  border: 2px solid #333;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 24px;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+}
+
+.iconButton:hover {
+  background: #f0f0f0;
+}
+
+/* Conteúdo Principal */
+.mainContent {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  z-index: 5;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  position: relative;
+  background: linear-gradient(135deg,
+    rgba(26,37,13,0.18) 0%,
+    rgba(168,230,92,0.12) 50%,
+    rgba(136,201,68,0.18) 100%);
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-right: 1px solid rgba(255,255,255,0.10);
+  box-shadow: 3px 0 18px rgba(0,0,0,0.14);
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+  backdrop-filter: blur(14px) saturate(130%);
+  -webkit-backdrop-filter: blur(14px) saturate(130%);
+  border-radius: 0 10px 10px 0;
+  z-index: 10;
+  transition: all .25s ease;
+  background-color: rgba(136,201,68,0.08);
+}
+
+.partyHeader {
+  background: #fff;
+  border: 2px solid #5a8830;
+  border-radius: 20px;
+  padding: 8px 15px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 13px;
+  color: #333;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  margin-bottom: 5px;
+}
+
+.partySlot {
+  background: #fff;
+  border: 2px solid #5a8830;
+  border-radius: 40px;
+  padding: 30px 35px;
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.partySlot:hover {
+  background: #f8f8f8;
+  transform: translateX(3px);
+}
+
+.partySlotActive {
+  background: #ffeb3b;
+  border-color: #f9a825;
+  box-shadow: 0 2px 6px rgba(249,168,37,0.4);
+}
+
+.pokemonIcon {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: visible;
+  position: relative;
+}
+
+.pokemonIcon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: scale(2.2);
+  margin-bottom: 58px;
+  z-index: 1;
+  position: relative;
+  pointer-events: none;
+}
+
+.pokemonInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pokemonName {
+  font-size: 11px;
+  font-weight: bold;
+  color: #333;
+}
+
+.pokemonLevel {
+  font-size: 10px;
+  color: #666;
+}
+
+.eggIcon {
+  width: 24px;
+  height: 24px;
+  background: #c8e6c9;
+  border-radius: 50%;
+  margin-left: 4px;
+}
+
+/* Box Area */
+.boxArea {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 40px 20px 40px;
+}
+
+.boxHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  gap: 30px;
+  margin-left: -550px;
+}
+
+.boxArrow {
+  background: #000;
+  color: #fff;
+  border: 2px solid #fff;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 28px;
+  font-weight: bold;
+  clip-path: polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%);
+}
+
+.boxArrow:hover {
+  background: #333;
+}
+
+.boxTitle {
+  background: #000;
+  color: #fff;
+  padding: 15px 70px;
+  border: 2px solid #fff;
+  border-radius: 35px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}
+
+.pokemonGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 25px;
+  max-width: 700px;
+  margin: 0 auto;
+  margin-left: 250px;
+}
+
+.pokemonCell {
+  width: 150px;
+  height: 150px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.pokemonCell:hover {
+  background: rgba(255,255,255,0.5);
+  transform: scale(1.05);
+}
+
+.pokemonCellSelected {
+  background: #ffeb3b;
+  box-shadow: 0 0 10px rgba(255,235,59,0.7);
+}
+
+.pokemonSprite {
+  width: 140px;
+  height: 140px;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* Bottom Controls */
+.bottomControls {
+  background: linear-gradient(180deg, #1a1a1a 0%, #000 100%);
+  padding: 20px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 2px solid #333;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.4);
+  z-index: 15;
+}
+
+.controlsLeft,
+.controlsRight {
+  display: flex;
+  gap: 15px;
+}
+
+.controlButton {
+  background: rgba(255,255,255,0.1);
+  border: 2px solid #555;
+  border-radius: 10px;
+  padding: 15px 25px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.2s;
+}
+
+.controlButton:hover {
+  background: rgba(255,255,255,0.2);
+  border-color: #777;
+}
+
+.buttonIcon {
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #000;
+}

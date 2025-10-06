@@ -1,0 +1,131 @@
+/* Added styles for Tamagochi modal */
+.tamagochiModal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  opacity: 0;
+
+  /* Frosted glass effect */
+  background: rgba(15, 15, 15, 0);
+  backdrop-filter: blur(0px) saturate(180%);
+  -webkit-backdrop-filter: blur(0px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0);
+
+  /* Smooth appearance animation */
+  animation: fade-blur-in 0.4s ease forwards;
+}
+
+.tamagochiImage {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  border: none;
+  object-fit: cover;
+}
+
+/* Added styles for Pikachu GIF in Tamagochi modal */
+.tamagochiContent {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tamagochiPikachu {
+  position: absolute;
+  width: 230px; /* Slightly increased size for better visibility */
+  height: auto;
+  z-index: 10;
+}
+
+/* Close button styles */
+.closeButton {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 48px; /* Slightly increased size for better visibility */
+  cursor: pointer;
+  z-index: 10001;
+}
+
+.closeButton:hover {
+  color: #ffcc00;
+}
+
+/* Heart emote styles */
+.tamagochiEmote {
+  position: absolute;
+  top: -80px; /* Position above Pikachu's head */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 70px;
+  animation: fade-in-out 5s ease-in-out;
+  z-index: 11;
+}
+
+/* Dialogue box styles */
+.dialogueBox {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  background: #000;
+  border: 4px solid #fff;
+  border-radius: 10px;
+  padding: 10px;
+  color: #fff;
+  font-family: 'PokemonEmerald', sans-serif; /* Updated to use the programmed font */
+  font-size: 40px; /* Increased font size for better readability */
+  text-align: center;
+  z-index: 10002;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.8);
+  }
+  10% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+  90% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.8);
+  }
+}
+
+@keyframes fade-blur-in {
+  0% {
+    opacity: 0;
+    backdrop-filter: blur(0px) saturate(180%);
+    -webkit-backdrop-filter: blur(0px) saturate(180%);
+    background: rgba(15, 15, 15, 0);
+    border-color: rgba(255, 255, 255, 0);
+  }
+  100% {
+    opacity: 1;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background: rgba(15, 15, 15, 0.35);
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+}

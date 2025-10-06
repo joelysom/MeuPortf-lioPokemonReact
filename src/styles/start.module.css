@@ -1,0 +1,87 @@
+/* start.module.css */
+ 
+/* Página inteira */
+.start-page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: url('../assets/bg/gba_bg.png') center center / cover no-repeat; /* Background de fallback */
+}
+
+/* Vídeo de fundo */
+.background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover; /* Garante que o vídeo cubra toda a tela */
+  z-index: 1; /* Mantém o vídeo na frente do background */
+}
+
+/* Botão centralizado no centro inferior */
+.start-button {
+  position: absolute;
+  bottom: 25%; /* Centralizado no centro inferior */
+  left: 50%;
+  transform: translate(-50%, 0);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  animation: blink 1.5s infinite; /* Animação de piscar */
+  z-index: 2; /* Mantém o botão na frente do vídeo e do background */
+  width: 470px; /* Define o tamanho do botão igual ao da imagem */
+  height: auto; /* Ajusta a altura automaticamente */
+}
+
+/* Imagem dentro do botão com tamanho ajustado */
+.start-button img {
+  width: 540px; /* Tamanho perfeito */
+  height: auto;
+  pointer-events: none; /* Garante que apenas o botão seja clicável */
+}
+
+/* Animação de piscar estilo Gameboy */
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Animação de brilho */
+@keyframes shadeIn {
+  0% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(2);
+  }
+  100% {
+    filter: brightness(1);
+  }
+}
+
+@keyframes shadeOff {
+  0% {
+    filter: brightness(2);
+  }
+  100% {
+    filter: brightness(1);
+  }
+}
+
+/* Aplicar animação ao botão */
+.start-button:active {
+  animation: shadeIn 0.5s ease-in-out, shadeOff 0.5s ease-in-out;
+}
+
+/* Aplicar animação à página inteira */
+.start-page.shade-effect {
+  animation: shadeIn 0.5s ease-in-out, shadeOff 0.5s ease-in-out;
+}

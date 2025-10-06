@@ -1,0 +1,44 @@
+newmtl BodyA
+ illum 2
+ Ka 0.7647059 0.7568628 0.6745098
+ Kd 1 1 1
+ Ks 0.1529412 0.1490196 0.1529412
+ Ns 20
+ d 1
+ Tr 0
+ map_Kd Sirnight_bodyCl_ctr.png
+newmtl BodyB
+ illum 2
+ Ka 0.7647059 0.7568628 0.6745098
+ Kd 1 1 1
+ Ks 0.3568628 0.2117647 0.2392157
+ Ns 20
+ d 1
+ Tr 0
+ map_Kd Sirnight_bodyCl_ctr.png
+newmtl Eye
+ illum 2
+ Ka 0.7647059 0.7568628 0.6745098
+ Kd 1 1 1
+ Ks 0.1529412 0.1490196 0.1529412
+ Ns 20
+ d 1
+ Tr 0
+ map_Kd Sirnight_eyeCl_ctr.png
+newmtl Mouth
+ illum 2
+ Ka 0.7647059 0.7568628 0.6745098
+ Kd 1 1 1
+ Ks 0.1529412 0.1490196 0.1529412
+ Ns 20
+ d 1
+ Tr 0
+ map_Kd Sirnight_mouthCl_ctr.png
+newmtl shadow_w
+ illum 2
+ Ka 0 0 0
+ Kd 0 0 0
+ Ks 0 0 0
+ Ns 20
+ d 1
+ Tr 0

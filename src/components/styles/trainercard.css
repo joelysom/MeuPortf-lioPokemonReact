@@ -1,0 +1,52 @@
+/* Significantly increased TrainerCard size and reduced border radius */
+.trainer-card {
+  width: 1700px; /* Substantially increased size */
+  height: auto;
+  background-color: #ffffffe6; /* Slightly more opaque */
+  border-radius: 5px; /* Further reduced border radius */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  backdrop-filter: blur(15px); /* Enhanced blur effect */
+}
+
+.trainer-card-image {
+  width: 100%;
+  height: auto;
+  border-radius: 2px; /* Further reduced border radius for the image */
+}
+
+/* Adjusted Card Swap Button to the middle of the right side */
+.trainer-card-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-swap-button {
+  position: absolute;
+  right: -270px; /* Positioned to the middle of the right side */
+  top: 50%; /* Centered vertically */
+  transform: translateY(-50%);
+  width: 200px; /* Same size as original buttons */
+  height: 200px; /* Same size as original buttons */
+  cursor: pointer;
+  z-index: 10;
+  opacity: 0; /* Initially hidden */
+  animation: slide-in-right 0.5s ease forwards; /* Slide-in animation */
+  animation-delay: 0.25s; /* Starts after the modal blur appears */
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translate(100%, -50%); /* Start off-screen to the right */
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-50%); /* End at the centered position */
+    opacity: 1;
+  }
+}
