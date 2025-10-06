@@ -1,6 +1,7 @@
 # MEU PORTFÓLIO TEMATIZADO: POKEMON
 
 [![Pikachu](https://img.pokemondb.net/sprites/black-white/anim/normal/pikachu.gif)](https://pokemondb.net/pokedex/pikachu)
+
 esse template desenvolvido por mim, é um portfólio com tema de pokemon, baseado nos jogos: emerald, sword&shield, XY e Mystery Dungeon
 
 Plugins Officiais disponiveis:
