@@ -27,7 +27,7 @@ const Index = () => {
     { id: 3, hasSprite: true, icon: '/assets/box/gardevoir.png' },
     { id: 4, hasSprite: true, icon: '/assets/box/charmander.png' },
     { id: 5, hasSprite: true, icon: '/assets/box/gallade.png' },
-    { id: 6, hasSprite: true, icon: '/assets/box/butterfree-gigantamax.png' },
+    { id: 6, hasSprite: true, icon: '/assets/box/butterfree.png' },
     { id: 7, hasSprite: true, icon: '/assets/box/jirachi.png' },
     { id: 8, hasSprite: true, icon: '/assets/box/squirtle.png' },
     { id: 9, hasSprite: true, icon: '/assets/box/togetic.png' },
@@ -274,7 +274,7 @@ const Index = () => {
                     if (pokemon.id === 3) handleHover('/assets/box/models/gardevoir/gardevoir.glb', 'gardevoir');
                     if (pokemon.id === 4) handleHover('/assets/box/models/charmander/charmander.glb', 'charmander');
                     if (pokemon.id === 5) handleHover('/assets/box/models/gallade/gallade.glb', 'gallade');
-                    if (pokemon.id === 6) handleHover('/assets/box/models/butterfree-gigantamax/butterfree-gigantamax.glb', 'butterfree');
+                    if (pokemon.id === 6) handleHover('/assets/box/models/butterfree/butterfree.glb', 'butterfree');
                     if (pokemon.id === 7) handleHover('/assets/box/models/jirachi/jirachi.glb', 'jirachi');
                     if (pokemon.id === 8) handleHover('/assets/box/models/squirtle/squirtle.glb', 'squirtle');
                     if (pokemon.id === 9) handleHover('/assets/box/models/togetic/togetic.glb', 'togetic');
@@ -287,7 +287,7 @@ const Index = () => {
                       3: { modelPath: '/assets/box/models/gardevoir/gardevoir.glb', configKey: 'gardevoir', name: 'Gardevoir' },
                       4: { modelPath: '/assets/box/models/charmander/charmander.glb', configKey: 'charmander', name: 'Charmander' },
                       5: { modelPath: '/assets/box/models/gallade/gallade.glb', configKey: 'gallade', name: 'Gallade' },
-                      6: { modelPath: '/assets/box/models/butterfree-gigantamax/butterfree-gigantamax.glb', configKey: 'butterfree', name: 'Butterfree' },
+                      6: { modelPath: '/assets/box/models/butterfree/butterfree.glb', configKey: 'butterfree', name: 'Butterfree' },
                       7: { modelPath: '/assets/box/models/jirachi/jirachi.glb', configKey: 'jirachi', name: 'Jirachi' },
                       8: { modelPath: '/assets/box/models/squirtle/squirtle.glb', configKey: 'squirtle', name: 'Squirtle' },
                       9: { modelPath: '/assets/box/models/togetic/togetic.glb', configKey: 'togetic', name: 'Togetic' },
