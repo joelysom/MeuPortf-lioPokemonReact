@@ -55,6 +55,9 @@ const Index = () => {
           azurill: { position: [1.8, -0.8, 0], rotation: [0, 5.2, 0], scale: [2.9, 2.9, 2.9] },
           bulbasaur: { position: [1.6, -0.7, 0], rotation: [0, 5.2, 0], scale: [1.5, 1.5, 1.5] },
           gardevoir: { position: [1.7, -0.9, 0], rotation: [0, 5.6, 0], scale: [1.3, 1.3, 1.3] },
+          charmander: { position: [1.7, -0.8, 0], rotation: [0, 5.4, 0], scale: [1.8, 1.8, 1.8] },
+          squirtle: { position: [1.6, -0.7, 0], rotation: [0, 5.2, 0], scale: [1.6, 1.6, 1.6] },
+          togetic: { position: [1.7, -0.8, 0], rotation: [0, 5.5, 0], scale: [2.0, 2.0, 2.0] },
         };
 
         const config = state.configKey ? modelConfigurations[state.configKey] : modelConfigurations.mew;

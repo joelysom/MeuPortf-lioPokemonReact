@@ -139,6 +139,9 @@ const Index = () => {
     azurill: { position: [1.8, -0.8, 0], rotation: [0, 5.2, 0], scale: [2.9, 2.9, 2.9] },
     bulbasaur: { position: [1.6, -0.7, 0], rotation: [0, 5.2, 0], scale: [1.5, 1.5, 1.5] },
     gardevoir: { position: [1.7, -0.9, 0], rotation: [0, 5.6, 0], scale: [1.3, 1.3, 1.3] },
+    charmander: { position: [1.7, -0.8, 0], rotation: [0, 5.4, 0], scale: [1.8, 1.8, 1.8] },
+    squirtle: { position: [1.6, -0.7, 0], rotation: [0, 5.2, 0], scale: [1.6, 1.6, 1.6] },
+    togetic: { position: [1.7, -0.8, 0], rotation: [0, 5.5, 0], scale: [2.0, 2.0, 2.0] },
   };
 
   const handleHover = (modelPath: string, configKey: string) => {
@@ -266,6 +269,9 @@ const Index = () => {
                     if (pokemon.id === 1) handleHover('/assets/box/models/azurill/azurill.glb', 'azurill');
                     if (pokemon.id === 2) handleHover('/assets/box/models/bulbasaur/bulbasaur.glb', 'bulbasaur');
                     if (pokemon.id === 3) handleHover('/assets/box/models/gardevoir/gardevoir.glb', 'gardevoir');
+                    if (pokemon.id === 4) handleHover('/assets/box/models/charmander/charmander.glb', 'charmander');
+                    if (pokemon.id === 8) handleHover('/assets/box/models/squirtle/squirtle.glb', 'squirtle');
+                    if (pokemon.id === 9) handleHover('/assets/box/models/togetic/togetic.glb', 'togetic');
                   }}
                   onMouseLeave={resetToDefaultModel}
                   onClick={() => {
