@@ -58,8 +58,8 @@ const Index = () => {
           charmander: { position: [1.7, -0.8, 0], rotation: [0, 5.4, 0], scale: [1.8, 1.8, 1.8] },
           squirtle: { position: [1.6, -0.7, 0], rotation: [0, 5.2, 0], scale: [1.6, 1.6, 1.6] },
           togetic: { position: [1.7, -0.8, 0], rotation: [0, 5.5, 0], scale: [2.0, 2.0, 2.0] },
-          gallade: { position: [1.7, -0.8, 0], rotation: [0, 5.4, 0], scale: [1.6, 1.6, 1.6] },
-          butterfree: { position: [1.8, -0.6, 0], rotation: [0, 5.2, 0], scale: [2.4, 2.4, 2.4] },
+          gallade: { position: [1.7, -0.9, 0], rotation: [0, 5.0, 0], scale: [1.2, 1.2, 1.2] },
+          butterfree: { position: [1.3, -0.7, 0], rotation: [0, 5.2, 0], scale: [1.3, 1.3, 1.3] },
           jirachi: { position: [1.6, -0.7, 0], rotation: [0, 5.3, 0], scale: [1.7, 1.7, 1.7] },
         };
 
