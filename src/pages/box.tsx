@@ -260,15 +260,30 @@ const Index = () => {
           <div className={styles.pokemonGrid}>
             {pokemonGrid.map((pokemon) => (
               <div
-                key={pokemon.id}
-                className={styles.pokemonCell}
-                onMouseEnter={() => {
-                  if (pokemon.id === 1) handleHover('/assets/box/models/azurill/azurill.glb', 'azurill');
-                  if (pokemon.id === 2) handleHover('/assets/box/models/bulbasaur/bulbasaur.glb', 'bulbasaur');
-                  if (pokemon.id === 3) handleHover('/assets/box/models/gardevoir/gardevoir.glb', 'gardevoir');
-                }}
-                onMouseLeave={resetToDefaultModel}
-              >
+                  key={pokemon.id}
+                  className={styles.pokemonCell}
+                  onMouseEnter={() => {
+                    if (pokemon.id === 1) handleHover('/assets/box/models/azurill/azurill.glb', 'azurill');
+                    if (pokemon.id === 2) handleHover('/assets/box/models/bulbasaur/bulbasaur.glb', 'bulbasaur');
+                    if (pokemon.id === 3) handleHover('/assets/box/models/gardevoir/gardevoir.glb', 'gardevoir');
+                  }}
+                  onMouseLeave={resetToDefaultModel}
+                  onClick={() => {
+                    const modelMap: Record<number, { modelPath: string; configKey: string; name: string }> = {
+                      1: { modelPath: '/assets/box/models/azurill/azurill.glb', configKey: 'azurill', name: 'Azurill' },
+                      2: { modelPath: '/assets/box/models/bulbasaur/bulbasaur.glb', configKey: 'bulbasaur', name: 'Bulbasaur' },
+                      3: { modelPath: '/assets/box/models/gardevoir/gardevoir.glb', configKey: 'gardevoir', name: 'Gardevoir' },
+                      4: { modelPath: '/assets/box/models/charmander/charmander.glb', configKey: 'charmander', name: 'Charmander' },
+                      5: { modelPath: '/assets/box/models/gallade/gallade.glb', configKey: 'gallade', name: 'Gallade' },
+                      6: { modelPath: '/assets/box/models/butterfree-gigantamax/butterfree-gigantamax.glb', configKey: 'butterfree', name: 'Butterfree' },
+                      7: { modelPath: '/assets/box/models/jirachi/jirachi.glb', configKey: 'jirachi', name: 'Jirachi' },
+                      8: { modelPath: '/assets/box/models/squirtle/squirtle.glb', configKey: 'squirtle', name: 'Squirtle' },
+                      9: { modelPath: '/assets/box/models/togetic/togetic.glb', configKey: 'togetic', name: 'Togetic' },
+                    };
+                    const model = modelMap[pokemon.id] ?? { modelPath: '/assets/box/models/mew/mew.glb', configKey: 'mew', name: 'Mew' };
+                    navigate('/box-summary', { state: model });
+                  }}
+                >
                 {pokemon.hasSprite && (
                   <div className={styles.pokemonSprite}>
                     <img src={pokemon.icon} alt={`Pokemon ${pokemon.id}`} />
