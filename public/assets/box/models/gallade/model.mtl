@@ -1,0 +1,35 @@
+newmtl Body
+ illum 2
+ Ka 0.7882353 0.7882353 0.7882353
+ Kd 0.8 0.8 0.8
+ Ks 0.2431373 0.2431373 0.2431373
+ Ns 20
+ d 1
+ Tr 0
+ map_Kd Erureido_bodyCl_ctr.png
+newmtl Eye
+ illum 2
+ Ka 0.7882353 0.7882353 0.7882353
+ Kd 0.8 0.8 0.8
+ Ks 0.2431373 0.2431373 0.2431373
+ Ns 20
+ d 1
+ Tr 0
+ map_Kd Erureido_eyeCl_ctr.png
+newmtl Mouth
+ illum 2
+ Ka 0.7882353 0.7882353 0.7882353
+ Kd 0.8 0.8 0.8
+ Ks 0.2431373 0.2431373 0.2431373
+ Ns 20
+ d 1
+ Tr 0
+ map_Kd Erureido_mouthCl_ctr.png
+newmtl shadow_w
+ illum 2
+ Ka 0 0 0
+ Kd 0 0 0
+ Ks 0 0 0
+ Ns 20
+ d 1
+ Tr 0

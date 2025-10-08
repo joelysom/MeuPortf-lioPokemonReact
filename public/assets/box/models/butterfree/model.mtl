@@ -1,0 +1,53 @@
+newmtl Body
+ illum 2
+ Ka 1 1 1
+ Kd 0.8 0.8 0.8
+ Ks 0.2235294 0.3411765 0.4117647
+ Ns 20
+ d 1
+ Tr 0
+ map_Kd Butterfree_bodyCl_ctr.png
+newmtl Body1
+ illum 2
+ Ka 1 1 1
+ Kd 0.8 0.8 0.8
+ Ks 0.6 0.3294118 0.3333333
+ Ns 20
+ d 1
+ Tr 0
+ map_Kd Butterfree_bodyCl_ctr.png
+newmtl Body2
+ illum 2
+ Ka 1 1 1
+ Kd 0.8 0.8 0.8
+ Ks 0.4862745 0.7647059 0.8039216
+ Ns 20
+ d 1
+ Tr 0
+ map_Kd Butterfree_bodyCl_ctr.png
+newmtl Eye
+ illum 2
+ Ka 1 0.8666667 0.8666667
+ Kd 0.8 0.8 0.8
+ Ks 1 1 1
+ Ns 20
+ d 1
+ Tr 0
+ map_Kd Butterfree_eyeCl_ctr.png
+newmtl Tooth
+ illum 2
+ Ka 1 1 1
+ Kd 0.8 0.8 0.8
+ Ks 0.2235294 0.3411765 0.4117647
+ Ns 20
+ d 1
+ Tr 0
+ map_Kd Butterfree_bodyCl_ctr.png
+newmtl shadow_w
+ illum 2
+ Ka 0 0 0
+ Kd 0 0 0
+ Ks 0 0 0
+ Ns 20
+ d 1
+ Tr 0

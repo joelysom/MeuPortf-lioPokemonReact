@@ -142,6 +142,9 @@ const Index = () => {
     charmander: { position: [1.7, -0.8, 0], rotation: [0, 5.4, 0], scale: [1.8, 1.8, 1.8] },
     squirtle: { position: [1.6, -0.7, 0], rotation: [0, 5.2, 0], scale: [1.6, 1.6, 1.6] },
     togetic: { position: [1.7, -0.8, 0], rotation: [0, 5.5, 0], scale: [2.0, 2.0, 2.0] },
+    gallade: { position: [1.7, -0.8, 0], rotation: [0, 5.4, 0], scale: [1.6, 1.6, 1.6] },
+    butterfree: { position: [1.8, -0.6, 0], rotation: [0, 5.2, 0], scale: [2.4, 2.4, 2.4] },
+    jirachi: { position: [1.6, -0.7, 0], rotation: [0, 5.3, 0], scale: [1.7, 1.7, 1.7] },
   };
 
   const handleHover = (modelPath: string, configKey: string) => {
@@ -270,6 +273,9 @@ const Index = () => {
                     if (pokemon.id === 2) handleHover('/assets/box/models/bulbasaur/bulbasaur.glb', 'bulbasaur');
                     if (pokemon.id === 3) handleHover('/assets/box/models/gardevoir/gardevoir.glb', 'gardevoir');
                     if (pokemon.id === 4) handleHover('/assets/box/models/charmander/charmander.glb', 'charmander');
+                    if (pokemon.id === 5) handleHover('/assets/box/models/gallade/gallade.glb', 'gallade');
+                    if (pokemon.id === 6) handleHover('/assets/box/models/butterfree-gigantamax/butterfree-gigantamax.glb', 'butterfree');
+                    if (pokemon.id === 7) handleHover('/assets/box/models/jirachi/jirachi.glb', 'jirachi');
                     if (pokemon.id === 8) handleHover('/assets/box/models/squirtle/squirtle.glb', 'squirtle');
                     if (pokemon.id === 9) handleHover('/assets/box/models/togetic/togetic.glb', 'togetic');
                   }}

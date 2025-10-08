@@ -1,0 +1,44 @@
+newmtl Body
+ illum 2
+ Ka 0.7098039 0.7098039 0.7098039
+ Kd 0.8 0.8 0.8
+ Ks 0.4470588 0.3764706 0.1333333
+ Ns 20
+ d 1
+ Tr 0
+ map_Kd Jirachi_bodyCl_ctr.png
+newmtl EyeA
+ illum 2
+ Ka 0.7098039 0.7098039 0.7098039
+ Kd 0.8 0.8 0.8
+ Ks 0.4470588 0.3764706 0.1333333
+ Ns 20
+ d 1
+ Tr 0
+ map_Kd Jirachi_eyeACl_ctr.png
+newmtl EyeB
+ illum 2
+ Ka 0.7098039 0.7098039 0.7098039
+ Kd 0.8 0.8 0.8
+ Ks 0.4470588 0.3764706 0.1333333
+ Ns 20
+ d 1
+ Tr 0
+ map_Kd Jirachi_eyeBCl_ctr.png
+newmtl Mouth
+ illum 2
+ Ka 0.7098039 0.7098039 0.7098039
+ Kd 0.8 0.8 0.8
+ Ks 0.4470588 0.3764706 0.1333333
+ Ns 20
+ d 1
+ Tr 0
+ map_Kd Jirachi_mouthCl_ctr.png
+newmtl shadow_w
+ illum 2
+ Ka 0 0 0
+ Kd 0 0 0
+ Ks 0 0 0
+ Ns 20
+ d 1
+ Tr 0
