@@ -261,6 +261,8 @@ function Home() {
         showNextFrame();
       } else if (activeCard === 0) {
         navigate('/box'); // Navigate to the /box page for 'Trabalhos'
+      } else if (activeCard === 2) {
+        navigate('/pokedex'); // Redireciona para a página /pokedex para 'Contato'
       }
     }
   };
