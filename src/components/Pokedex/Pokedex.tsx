@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
+import { Instagram, Linkedin, MessageCircle } from "lucide-react";
 import "../../styles/pokedex.css";
 
 interface PortfolioItem {
@@ -9,48 +10,72 @@ interface PortfolioItem {
   description: string;
   skills: string[];
   level: number;
+  link?: string;
+  icon?: JSX.Element;
 }
 
 const portfolioData: PortfolioItem[] = [
   {
     id: 1,
-    title: "E-Commerce Platform",
-    type: "Web Application",
-    description: "Plataforma completa de e-commerce com carrinho, pagamentos e painel administrativo.",
-    skills: ["React", "Node.js", "MongoDB", "Stripe"],
-    level: 85
+    title: "Instagram",
+    type: "Social Network",
+    description: "Siga-me no Instagram e acompanhe meus projetos, ideias criativas e inspirações diárias.",
+    skills: ["@joelysom.agiossitri", "Design Criativo", "Projetos Visuais", "Estilo Próprio"],
+    level: 95,
+    link: "https://instagram.com/joelysom.agiossitri",
+    icon: <Instagram size={32} color="#0f380f" />
   },
   {
     id: 2,
-    title: "Mobile Fitness App",
-    type: "Mobile Development",
-    description: "Aplicativo de fitness com tracking de exercícios e planos personalizados.",
-    skills: ["React Native", "Firebase", "Redux"],
-    level: 78
+    title: "LinkedIn",
+    type: "Professional Network",
+    description: "Conecte-se comigo no LinkedIn e acompanhe minha jornada profissional em tecnologia e inovação.",
+    skills: ["Joelysom Alcântara", "ADS", "Inovação", "Conexões Profissionais"],
+    level: 90,
+    link: "https://www.linkedin.com/in/joelysom-alcantara",
+    icon: <Linkedin size={32} color="#0f380f" />
   },
   {
     id: 3,
-    title: "AI Chatbot",
-    type: "Machine Learning",
-    description: "Chatbot inteligente com processamento de linguagem natural para atendimento.",
-    skills: ["Python", "TensorFlow", "NLP", "FastAPI"],
-    level: 92
+    title: "WhatsApp",
+    type: "Contato Direto",
+    description: "Entre em contato comigo pelo WhatsApp para colaborações, ideias e novos projetos.",
+    skills: ["(xx) 9xxxx-xxxx", "Comunicação Rápida", "Networking", "Feedback Ágil"],
+    level: 88,
+    link: "https://wa.me/55xxxxxxxxxx", // coloque seu número aqui no formato 55DDDNÚMERO
+    icon: <MessageCircle size={32} color="#0f380f" />
   },
   {
     id: 4,
-    title: "Dashboard Analytics",
-    type: "Data Visualization",
-    description: "Dashboard interativo com visualizações de dados em tempo real.",
-    skills: ["TypeScript", "D3.js", "React", "WebSocket"],
-    level: 88
+    title: "Sobre Mim",
+    type: "Perfil Pessoal",
+    description: "Sou Joelysom Alcântara, estudante de Análise e Desenvolvimento de Sistemas (ADS). Apaixonado por tecnologia, programação e design criativo.",
+    skills: ["HTML", "CSS", "JavaScript", "React", "Python"],
+    level: 92
   },
   {
     id: 5,
-    title: "Blockchain DApp",
-    type: "Web3 Development",
-    description: "Aplicação descentralizada para NFT marketplace com smart contracts.",
-    skills: ["Solidity", "Web3.js", "Ethereum", "React"],
-    level: 75
+    title: "Missão Profissional",
+    type: "Visão & Propósito",
+    description: "Busco unir tecnologia e criatividade para desenvolver soluções que inspirem pessoas e transformem ideias em impacto real.",
+    skills: ["UI/UX", "Front-end", "Prototipagem", "Empreendedorismo"],
+    level: 87
+  },
+  {
+    id: 6,
+    title: "Projetos & Paixões",
+    type: "Portfólio Criativo",
+    description: "Exploro novas abordagens visuais, interfaces modernas e conceitos de design intuitivo para entregar experiências marcantes.",
+    skills: ["Animações CSS", "React Hooks", "Interatividade", "Estética Minimalista"],
+    level: 89
+  },
+  {
+    id: 7,
+    title: "Objetivos Futuros",
+    type: "Crescimento Pessoal",
+    description: "Meu objetivo é consolidar minha carreira na área de tecnologia, criando projetos que inspirem, eduquem e evoluam junto comigo.",
+    skills: ["Liderança", "Inovação", "Estudo Contínuo", "Comunicação"],
+    level: 93
   }
 ];
 
@@ -111,9 +136,18 @@ const Pokedex = () => {
                   <div className="screen-content">
                     <h2 className="project-title">{currentItem.title}</h2>
                     <p className="project-description">{currentItem.description}</p>
+
+                    {/* Ícones clicáveis */}
+                    {currentItem.link && (
+                      <div className="social-link">
+                        <a href={currentItem.link} target="_blank" rel="noopener noreferrer">
+                          {currentItem.icon}
+                        </a>
+                      </div>
+                    )}
                     
                     <div className="skills-section">
-                      <div className="skills-label">SKILLS:</div>
+                      <div className="skills-label">INFO:</div>
                       <div className="skills-list">
                         {currentItem.skills.map((skill, index) => (
                           <span key={index} className="skill-tag">{skill}</span>
@@ -122,7 +156,7 @@ const Pokedex = () => {
                     </div>
                     
                     <div className="level-section">
-                      <div className="level-label">EXPERTISE</div>
+                      <div className="level-label">CONEXÃO</div>
                       <div className="level-bar">
                         <div 
                           className="level-fill" 

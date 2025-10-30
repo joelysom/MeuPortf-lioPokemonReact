@@ -181,16 +181,78 @@ const Index = () => {
         {/* Left Panel - Text Information */}
         <div className="info-panel">
           <div className="info-content">
-            <p className="info-text">
-              This Pokémon is pretty <span className="highlight-blue">Lax</span> by nature.
-            </p>
-            <p className="info-text">
-              We first met one another on 10/06/2025,
-              <br />
-              and it was <span className="highlight-blue">on Route 4</span>!
-            </p>
-            <p className="info-text">At the time, this Pokémon was Lv. 13.</p>
-            <p className="info-text">It's highly curious!</p>
+            {state.configKey === 'azurill' ? (
+              <>
+                <img
+                  src="/assets/box/models/Projetos/RecnPlay2023.jpeg"
+                  alt="RecnPlay 2023"
+                  className="project-image"
+                  style={{ maxWidth: '88%', maxHeight: 310, objectFit: 'contain', marginBottom: 12, borderRadius: 12 }}
+                />
+                <p className="info-text">
+                  Oficina de Manutenção realizada no <span className="highlight-blue">recnplay de 2023</span>, atuei dando conselhos, ensinando a dar manutenção e como manusear de forma correta os <span className="highlight-blue">Perifericos de um Computador</span>, assim como o <span className="highlight-blue">descarte correto</span>.
+                </p>
+              </>
+            ) : state.configKey === 'gardevoir' ? (
+              <>
+                <div>
+                  <div className="prodtech-slider">
+                    <div className="prodtech-track">
+                      <img src="/assets/box/models/Projetos/Prodtech_0.jpeg" alt="Prodtech 0" />
+                      <img src="/assets/box/models/Projetos/Prodtech_1.jpeg" alt="Prodtech 1" />
+                    </div>
+                  </div>
+                  <p className="info-text">
+                    Desenvolvi um Sistema de <span className="highlight-blue">gestão de chamados</span> com funcionalidades como (chat, feedback, sistema inteligênte de retorno e atendimento). como finalização do <span className="highlight-blue">curso de T.I</span>
+                  </p>
+                </div>
+              </>
+            ) : state.configKey === 'charmander' ? (
+              <>
+                <div>
+                  <img
+                    src="/assets/box/models/Projetos/HackerCidadao.jpg"
+                    alt="Hacker Cidadão"
+                    className="project-image"
+                    style={{ maxWidth: '88%', maxHeight: 360, objectFit: 'contain', marginBottom: 12, borderRadius: 12 }}
+                  />
+                  <p className="info-text">
+                    Desenvolvemos juntos, uma <span className="highlight-blue">inteligência artificial</span> que utiliza <span className="highlight-blue">visão computacional</span> para identificar descartes incorretos de resíduos e guardar no banco de dados, ajudando no combate ao <span className="highlight-blue">descarte prejudicial e criminoso</span> (o descarte irregular de resíduos é crime ambiental, previsto na <span className="highlight-blue">Lei nº 9.605/1998</span> - Lei de Crimes Ambientais).
+                  </p>
+                </div>
+              </>
+            ) : state.configKey === 'bulbasaur' ? (
+              <>
+                <div className="solidario-card">
+                  <div className="solidario-slider">
+                    <div className="solidario-track">
+                      <img src="/assets/box/models/Projetos/ProjetoSolidario_0.jpeg" alt="Projeto Solidario 0" />
+                      <img src="/assets/box/models/Projetos/ProjetoSolidario_1.jpeg" alt="Projeto Solidario 1" />
+                      <img src="/assets/box/models/Projetos/ProjetoSolidario_2.jpeg" alt="Projeto Solidario 2" />
+                      <img src="/assets/box/models/Projetos/ProjetoSolidario_3.jpeg" alt="Projeto Solidario 3" />
+                    </div>
+                  </div>
+                  <div className="solidario-text">
+                    <p className="info-text">
+                      Realizamos Projetos Solidários como <span className="highlight-blue">ONG</span> auxiliando na manutenção, reparo e limpeza de computadores para a <span className="highlight-blue">ONG SAMARITANOS</span>. também, extendemos nossa oficina, dando aulas em <span className="highlight-blue">escolas publicas</span> sobre manutenção e <span className="highlight-blue">descarte correto</span>, praticando a <span className="highlight-blue">inclusão</span>.
+                    </p>
+                  </div>
+                </div>
+              </>
+            ) : (
+              <>
+                <p className="info-text">
+                  This Pokémon is pretty <span className="highlight-blue">Lax</span> by nature.
+                </p>
+                <p className="info-text">
+                  We first met one another on 10/06/2025,
+                  <br />
+                  and it was <span className="highlight-blue">on Route 4</span>!
+                </p>
+                <p className="info-text">At the time, this Pokémon was Lv. 13.</p>
+                <p className="info-text">It's highly curious!</p>
+              </>
+            )}
           </div>
           <div className="diagonal-red-bottom"></div>
         </div>

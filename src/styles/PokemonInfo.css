@@ -340,3 +340,99 @@
     display: none;
   }
 }
+
+/* Slider for Projeto Solidario (bulbasaur) */
+.solidario-slider {
+  width: 100%;
+  max-width: 720px;
+  height: 760px; /* increased height as requested */
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  background: linear-gradient(180deg, #ffffff 0%, #eef7ff 100%);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+.solidario-track {
+  display: flex;
+  width: 400%; /* 4 slides */
+  height: 100%;
+  animation: solidario-slide 14s ease-in-out infinite;
+}
+.solidario-track img {
+  width: 100%;
+  flex: 0 0 25%; /* each image takes up 25% of track which equals 100% of container */
+  object-fit: cover;
+}
+
+@keyframes solidario-slide {
+  0% { transform: translateX(0%); }
+  20% { transform: translateX(0%); }
+  25% { transform: translateX(-25%); }
+  45% { transform: translateX(-25%); }
+  50% { transform: translateX(-50%); }
+  70% { transform: translateX(-50%); }
+  75% { transform: translateX(-75%); }
+  95% { transform: translateX(-75%); }
+  100% { transform: translateX(0%); }
+}
+
+/* make images responsive on small screens */
+@media (max-width: 900px) {
+  .solidario-slider { height: 240px; width: 100%; }
+}
+
+/* Prodtech slider for Gardevoir (2 images) */
+.prodtech-slider {
+  width: 88%;
+  max-width: 720px;
+  height: 320px;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+.prodtech-track {
+  display: flex;
+  width: 200%; /* 2 slides */
+  height: 100%;
+  animation: prodtech-slide 8s ease-in-out infinite;
+}
+.prodtech-track img {
+  width: 100%;
+  flex: 0 0 50%;
+  object-fit: cover;
+}
+
+@keyframes prodtech-slide {
+  0% { transform: translateX(0%); }
+  45% { transform: translateX(0%); }
+  50% { transform: translateX(-50%); }
+  95% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+
+@media (max-width: 900px) {
+  .prodtech-slider { height: 220px; width: 100%; }
+}
+
+/* Card layout: slider left, text right */
+.solidario-card {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+}
+.solidario-card .solidario-slider {
+  flex: 0 0 48%;
+  margin-bottom: 0;
+}
+.solidario-text {
+  flex: 1 1 52%;
+}
+
+@media (max-width: 900px) {
+  .solidario-card { flex-direction: column; }
+  .solidario-card .solidario-slider { width: 100%; flex: none; }
+  .solidario-text { width: 100%; }
+}
