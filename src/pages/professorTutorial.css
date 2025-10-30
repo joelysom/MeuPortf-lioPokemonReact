@@ -1,0 +1,203 @@
+/* Styles for Professor tutorial page */
+@font-face {
+  font-family: 'PokemonEmerald';
+  src: url('../assets/fonts/PokemonEmerald.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.professor-page-wrapper {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('/assets/professor/backgroundProfessor.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.professor-animation-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  padding-bottom: 350px;
+}
+
+.professor-animation-image {
+  /* tornar a animação bem maior e responsiva -> usa clamp(px, vw, px) */
+  width: clamp(320px, 10vw, 1000px);
+  max-height: 55vh;
+  height: auto;
+  display: block;
+  image-rendering: pixelated; /* keeps pixel-art crisp if appropriate */
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.45));
+}
+
+@media (max-width: 640px) {
+  .professor-animation-image {
+    /* mobile: ocupar quase toda a largura disponível */
+    width: 92vw;
+    max-height: 75vh;
+  }
+}
+
+/* Chatbox styles - inspirado no visual DS (Pokémon Black & White) */
+.professor-chatbox-wrapper {
+  position: fixed;
+  left: 50%;
+  bottom: 120px; /* subir a caixa para mais alto da página */
+  transform: translateX(-50%);
+  z-index: 60;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  pointer-events: none; /* container não intercepta clique direto */
+  width: 100%;
+  /* permitir a caixa ocupar mais espaço sem ultrapassar a viewport */
+  width: min(96vw, 1200px);
+  max-width: 1400px; /* maior para telas largas */
+  padding: 0 16px;
+}
+
+.professor-chatbox {
+  pointer-events: auto; /* permitir interação dentro da caixa */
+  width: 100%;
+  background: linear-gradient(180deg,#f7f7f7 0%, #e9eef5 100%);
+  border: 6px solid #1f2b63; /* azul escuro do DS */
+  border-radius: 18px;
+  box-shadow: 0 14px 36px rgba(0,0,0,0.48);
+  padding: 18px 20px; /* aumentado */
+  display: flex;
+  flex-direction: column; /* texto em cima, ações abaixo (centralizadas) */
+  align-items: stretch;
+  gap: 12px;
+  min-height: 240px; /* caixa muito maior para destacar */
+  position: relative; /* necessário para centralizar botão absolute */
+}
+
+.professor-chatbox-text {
+  flex: 1 1 auto;
+  min-height: 56px; /* maior para mais linhas */
+  color: #07204a;
+  font-family: 'PokemonEmerald', sans-serif;
+  font-size: 55px; /* aumentado para melhor legibilidade */
+  line-height: 1.3;
+  text-transform: none;
+  white-space: pre-wrap;
+  text-align: left;
+  align-self: stretch; /* ocupar largura total da caixa */
+}
+
+
+/* Centraliza o botão no meio da caixa (meio centro) */
+.professor-chatbox-actions {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center; /* vertical center */
+  justify-content: center; /* horizontal center */
+  pointer-events: none; /* evitar interceptar quando for escondido */
+}
+
+.professor-chatbox-button {
+  pointer-events: auto; /* permitir clique no botão */
+  background: linear-gradient(180deg,#ffd86b 0%, #ffb84e 100%);
+  border: 2px solid #6b3e00;
+  color: #2b1600;
+  padding: 12px 20px; /* maior */
+  border-radius: 14px;
+  font-weight: 800;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 8px 0 rgba(0,0,0,0.18);
+}
+
+.professor-chatbox-button:active {
+  transform: translateY(2px);
+  box-shadow: 0 3px 0 rgba(0,0,0,0.12);
+}
+
+/* next arrow (pixel-style) */
+.professor-chatbox-next {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  width: 30px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  image-rendering: pixelated;
+  padding: 0;
+}
+
+.professor-chatbox-next:focus {
+  outline: 2px solid rgba(0,0,0,0.15);
+  outline-offset: 3px;
+}
+
+/* create a pixel-like down chevron using CSS borders */
+.professor-chatbox-next .chev {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 12px solid #07204a; /* dark color */
+  transform-origin: center;
+  image-rendering: pixelated;
+}
+
+/* bobbing animation */
+@keyframes bob {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+  100% { transform: translateY(0); }
+}
+
+.professor-chatbox-next .chev {
+  animation: bob 800ms ease-in-out infinite;
+}
+
+@media (max-width: 720px) {
+  .professor-chatbox-wrapper {
+    max-width: 92vw;
+    bottom: 28px; /* manter mais visível em telas pequenas */
+    padding: 0 10px;
+  }
+  .professor-chatbox {
+    padding: 12px 14px;
+    border-radius: 14px;
+    min-height: 180px;
+  }
+  .professor-chatbox-text {
+    font-size: 18px;
+    min-height: 80px;
+  }
+  .professor-chatbox-button {
+    padding: 8px 14px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 420px) {
+  .professor-chatbox {
+    padding: 10px;
+    border-radius: 12px;
+  }
+  .professor-chatbox-text {
+    font-size: 16px;
+  }
+  .professor-chatbox-button {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,412 @@
+/* Styles for Professor tutorial page (CSS Module) */
+@font-face {
+  font-family: 'PokemonEmerald';
+  src: url('../assets/fonts/PokemonEmerald.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.professorPageWrapper {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('/assets/professor/backgroundProfessor.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.professorAnimationBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  padding-bottom: 350px;
+  transition: transform 700ms cubic-bezier(.2,.9,.2,1);
+}
+
+/* shift the professor sprite to the right when starting the tutorial */
+.shiftRight {
+  transition: transform 700ms cubic-bezier(.2,.9,.2,1), bottom 700ms ease;
+  transform: translateX(28vw) scale(0.98);
+}
+
+.professorAnimationImage {
+  width: clamp(320px, 10vw, 1000px);
+  max-height: 55vh;
+  height: auto;
+  display: block;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.45));
+}
+
+@media (max-width: 640px) {
+  .professorAnimationImage {
+    width: 92vw;
+    max-height: 75vh;
+  }
+}
+
+/* Chatbox styles - inspirado no visual DS (Pokémon Black & White) */
+.professorChatboxWrapper {
+  position: fixed;
+  left: 50%;
+  bottom: 120px;
+  transform: translateX(-50%);
+  z-index: 60;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  pointer-events: none;
+  width: min(96vw, 1200px);
+  max-width: 1400px;
+  padding: 0 16px;
+}
+
+/* full-screen overlay behind chatbox to highlight the button */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: background 300ms ease, opacity 2500ms ease;
+  opacity: 1;
+  z-index: 50; /* below chatbox (chatbox wrapper is 60) */
+}
+
+/* when fading, change to white then fade out */
+.overlayWhiteFade {
+  background: rgba(255,255,255,0.95);
+  opacity: 0;
+}
+
+.professorChatbox {
+  pointer-events: auto;
+  width: 100%;
+  background: linear-gradient(180deg,#f7f7f7 0%, #e9eef5 100%);
+  border: 6px solid #1f2b63;
+  border-radius: 18px;
+  box-shadow: 0 14px 36px rgba(0,0,0,0.48);
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+  min-height: 240px;
+  position: relative;
+}
+
+.professorChatboxText {
+  flex: 1 1 auto;
+  min-height: 56px;
+  color: #07204a;
+  font-family: 'PokemonEmerald', sans-serif;
+  font-size: 55px;
+  line-height: 1.3;
+  padding-left: 12px;
+  box-sizing: border-box;
+  text-transform: none;
+  white-space: pre-wrap;
+  text-align: left;
+  align-self: stretch;
+}
+
+.professorChatboxActions {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.professorChatboxButton {
+  pointer-events: auto;
+  background: linear-gradient(180deg,#ffd86b 0%, #ffb84e 100%);
+  border: 2px solid #6b3e00;
+  color: #2b1600;
+  padding: 18px 36px;
+  border-radius: 16px;
+  font-weight: 900;
+  font-size: 26px;
+  cursor: pointer;
+  box-shadow: 0 12px 0 rgba(0,0,0,0.22);
+}
+
+.professorChatboxButton:active {
+  transform: translateY(2px);
+  box-shadow: 0 3px 0 rgba(0,0,0,0.12);
+}
+
+/* name input area shown when asking for player's name */
+.nameInputWrapper {
+  pointer-events: auto;
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.nameInput {
+  padding: 12px 16px;
+  font-size: 24px;
+  border-radius: 12px;
+  border: 2px solid #6b3e00;
+  background: #fff;
+  min-width: 220px;
+  max-width: 48vw;
+  box-sizing: border-box;
+  font-family: 'PokemonEmerald', sans-serif;
+  color: #07204a;
+}
+
+.nameConfirmButton {
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: linear-gradient(180deg,#9ee37a 0%, #6bd24a 100%);
+  border: 2px solid #2f6b1f;
+  color: #06320a;
+  font-weight: 800;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+/* highlighted button when overlay is active */
+.highlightButton {
+  box-shadow: 0 20px 40px rgba(255, 200, 60, 0.18), 0 8px 0 rgba(0,0,0,0.22) !important;
+  transform: translateY(-2px) scale(1.02);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+/* next arrow (pixel-style) */
+.professorChatboxNext {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  width: 72px;
+  height: 60px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  image-rendering: pixelated;
+  padding: 0;
+  z-index: 80;
+}
+
+.professorChatboxNext:focus {
+  outline: 2px solid rgba(0,0,0,0.15);
+  outline-offset: 3px;
+}
+
+/* create a pixel-like down chevron using CSS borders */
+.professorChev {
+  width: 0;
+  height: 0;
+  border-left: 18px solid transparent;
+  border-right: 18px solid transparent;
+  border-top: 28px solid #07204a;
+  transform-origin: center;
+  image-rendering: pixelated;
+}
+
+@keyframes bob {
+  0% { transform: translateY(0); }
+  40% { transform: translateY(10px); }
+  60% { transform: translateY(6px); }
+  100% { transform: translateY(0); }
+}
+
+.professorChev {
+  animation: bob 700ms cubic-bezier(.4,0,.2,1) infinite;
+}
+
+/* starting card that appears to the left when tutorial begins */
+.startCard {
+  position: fixed;
+  /* shift further left from center so card sits left of the professor */
+  left: calc(50% - 680px);
+  /* larger card */
+  bottom: 420px;
+  width: 720px;
+  min-height: 560px;
+  padding: 18px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 0; /* remove heavy border for modern look */
+  box-shadow: 0 28px 60px rgba(0,0,0,0.22);
+  overflow: hidden; /* ensure image fills and is clipped to card radius */
+  opacity: 0;
+  transform: translateX(-12px) translateY(8px);
+  /* make opacity transition 2s for smooth disappear */
+  transition: opacity 2000ms ease, transform 600ms cubic-bezier(.2,.9,.2,1);
+  z-index: 80; /* above chatbox */
+  pointer-events: none;
+}
+
+.startCardVisible {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+  pointer-events: auto;
+}
+
+.startCardContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  gap: 8px;
+  padding: 12px 18px 18px 18px;
+}
+.startCardContent h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #07204a;
+  align-self: flex-start;
+}
+
+/* image inside the start card */
+.startCardImage {
+  display: block;
+  width: 100%;
+  /* fill the card area and crop if needed for a modern look */
+  height: calc(100% - 56px);
+  object-fit: cover;
+  margin: 0;
+  image-rendering: pixelated;
+  border-radius: 0; /* rely on container radius */
+  background: transparent;
+  padding: 0;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12) inset;
+}
+
+/* typing caret */
+.professorChatboxText.typing::after {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 1.05em;
+  background: #07204a;
+  margin-left: 10px;
+  vertical-align: bottom;
+  animation: blink 700ms steps(1) infinite;
+}
+
+/* expose a typing classname so we can toggle it from the component */
+.typing { --typing-active: 1; }
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@media (max-width: 720px) {
+  .professorChatboxWrapper {
+    max-width: 92vw;
+    bottom: 28px;
+    padding: 0 10px;
+  }
+  .professorChatbox {
+    padding: 12px 14px;
+    border-radius: 14px;
+    min-height: 180px;
+  }
+  .professorChatboxText {
+    font-size: 18px;
+    min-height: 80px;
+    padding-left: 10px;
+  }
+  .professorChatboxButton {
+    padding: 12px 20px;
+    font-size: 18px;
+  }
+  /* arrow slightly smaller on tablet */
+  .professorChatboxNext {
+    width: 56px;
+    height: 46px;
+    right: 12px;
+    bottom: 12px;
+  }
+  .professorChev {
+    border-left-width: 14px;
+    border-right-width: 14px;
+    border-top-width: 22px;
+  }
+
+  /* make the start card responsive on tablet */
+  .startCard {
+    left: 6vw;
+    bottom: 200px;
+    width: 86vw;
+    min-height: 340px;
+  }
+  .startCardImage {
+    max-height: 200px;
+  }
+}
+
+@media (max-width: 420px) {
+  .professorChatbox {
+    padding: 10px;
+    border-radius: 12px;
+  }
+  .professorChatboxText {
+    font-size: 16px;
+    padding-left: 8px;
+  }
+  .professorChatboxButton {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  /* mobile: manter seta visível mas menor */
+  .professorChatboxNext {
+    width: 44px;
+    height: 36px;
+    right: 10px;
+    bottom: 10px;
+  }
+  .professorChev {
+    border-left-width: 10px;
+    border-right-width: 10px;
+    border-top-width: 16px;
+  }
+
+  /* mobile: start card should be full width and near top/below animation */
+  .startCard {
+    left: 4vw;
+    bottom: 120px;
+    width: 92vw;
+    min-height: 260px;
+  }
+  .startCardImage {
+    max-height: 140px;
+  }
+}
+
+/* screen flash used before redirect */
+.screenFlash {
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  z-index: 9999;
+  pointer-events: none;
+  animation: screenFlash 700ms ease-in forwards;
+}
+
+@keyframes screenFlash {
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+  100% { opacity: 1; }
+}

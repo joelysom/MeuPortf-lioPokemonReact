@@ -2,7 +2,8 @@
 .pokedex {
   position: relative;
   width: 100%;
-  max-width: 500px;
+  max-width: 800px; /* Increased max-width for larger display */
+  height: 90vh; /* Adjusted height to make it fill most of the viewport */
   background: linear-gradient(135deg, #dc0a2d 0%, #a00821 100%);
   border-radius: 20px 20px 25px 25px;
   box-shadow: 
@@ -315,8 +316,8 @@
 
 .dpad {
   position: relative;
-  width: 120px;
-  height: 120px;
+  width: 150px; /* Increased size */
+  height: 150px; /* Increased size */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
@@ -327,18 +328,18 @@
   background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
   border: none;
   color: #666;
-  font-size: 16px;
+  font-size: 18px; /* Increased font size */
   cursor: pointer;
   transition: all 0.1s ease;
   box-shadow: 
-    0 4px 0 #0a0a0a,
-    inset 0 1px 2px rgba(255, 255, 255, 0.1);
+    0 6px 0 #0a0a0a, /* Adjusted shadow for larger buttons */
+    inset 0 2px 4px rgba(255, 255, 255, 0.1);
 }
 
 .dpad-button:active {
   transform: translateY(2px);
   box-shadow: 
-    0 2px 0 #0a0a0a,
+    0 4px 0 #0a0a0a,
     inset 0 1px 2px rgba(255, 255, 255, 0.1);
 }
 
@@ -388,21 +389,21 @@
 }
 
 .action-btn {
-  width: 50px;
-  height: 50px;
+  width: 60px; /* Increased size */
+  height: 60px; /* Increased size */
   border-radius: 50%;
   border: 4px solid rgba(0, 0, 0, 0.3);
   cursor: pointer;
   transition: all 0.1s ease;
   box-shadow: 
-    0 6px 0 rgba(0, 0, 0, 0.3),
-    inset 0 2px 4px rgba(255, 255, 255, 0.3);
+    0 8px 0 rgba(0, 0, 0, 0.3), /* Adjusted shadow for larger buttons */
+    inset 0 3px 5px rgba(255, 255, 255, 0.3);
 }
 
 .action-btn:active {
-  transform: translateY(3px);
+  transform: translateY(4px); /* Adjusted for larger buttons */
   box-shadow: 
-    0 3px 0 rgba(0, 0, 0, 0.3),
+    0 4px 0 rgba(0, 0, 0, 0.3),
     inset 0 2px 4px rgba(255, 255, 255, 0.3);
 }
 

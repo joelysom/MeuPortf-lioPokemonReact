@@ -5,5 +5,8 @@ declare module '*.svg';
 declare module '*.gif';
 declare module '*.glb';
 declare module '*.gltf';
+declare module '*.module.css';
+declare module '*.module.scss';
+declare module '*.module.sass';
 
 export {};

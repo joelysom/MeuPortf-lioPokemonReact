@@ -21,7 +21,7 @@ const StartPage = () => {
     audio.onended = () => {
       setTimeout(() => {
         setIsShading(false); // Remove a classe de animação
-        navigate('/home'); // Redireciona para /home após o som e animação
+        navigate('/professor-tutorial'); // Redireciona para /professor-tutorial após o som e animação
       }, 500); // Aguarda o término da animação
     };
   };
