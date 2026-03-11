@@ -7,7 +7,7 @@ const PortfolioSelection = () => {
   const navigate = useNavigate();
 
   const handleClassicPortfolio = () => {
-    navigate('/home');
+    navigate('/portfolio-simple');
   };
 
   const handleThemedPortfolio = () => {

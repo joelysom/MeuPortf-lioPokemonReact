@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import PortfolioSelection from './pages/portfolioSelection';
 import Home from './pages/home';
+import PortfolioSimple from './pages/portfolioSimple';
 import StartPage from './pages/start';
 import PikachuAime from './pages/paime';
 import Box from './pages/box';
@@ -14,6 +15,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<PortfolioSelection />} />
+        <Route path="/portfolio-simple" element={<PortfolioSimple />} />
         <Route path="/start" element={<StartPage />} />
         <Route path="/home" element={<Home />} />
         <Route path="/professor-tutorial" element={<ProfessorTutorial />} />
