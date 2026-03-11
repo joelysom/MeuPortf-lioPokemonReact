@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/portfolioselection.css';
 import profileImg from '../assets/profile/Pikachu.png';
 
 const PortfolioSelection = () => {
   const navigate = useNavigate();
+  const [starCount, setStarCount] = useState(50);
+
+  useEffect(() => {
+    const handleResize = () => {
+      // Reduzir drasticamente em mobile
+      setStarCount(window.innerWidth <= 768 ? 8 : 50);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleClassicPortfolio = () => {
     navigate('/portfolio-simple');
@@ -18,7 +30,7 @@ const PortfolioSelection = () => {
     <div className="portfolio-selection">
       {/* Shooting Stars Background */}
       <div className="night">
-        {[...Array(50)].map((_, i) => (
+        {[...Array(starCount)].map((_, i) => (
           <div key={i} className="shooting_star"></div>
         ))}
       </div>
