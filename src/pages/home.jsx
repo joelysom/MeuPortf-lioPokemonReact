@@ -230,10 +230,10 @@ function Home() {
 
         let frameIndex = 0;
         const frames = [
-          ...Array(34).fill(0).map((_, i) => `public/assets/yellow/frame_${String(i).padStart(2, '0')}_delay-0.02s.png`),
-          ...Array(13).fill(0).map((_, i) => `public/assets/yellow/frame_${String(i + 34).padStart(2, '0')}_delay-0.06s.png`),
-          'public/assets/yellow/frame_47_delay-0.5s.png',
-          'public/assets/yellow/frame_48_delay-1s.png',
+          ...Array(34).fill(0).map((_, i) => `assets/yellow/frame_${String(i).padStart(2, '0')}_delay-0.02s.png`),
+          ...Array(13).fill(0).map((_, i) => `assets/yellow/frame_${String(i + 34).padStart(2, '0')}_delay-0.06s.png`),
+          'assets/yellow/frame_47_delay-0.5s.png',
+          'assets/yellow/frame_48_delay-1s.png',
         ];
 
         const showNextFrame = () => {
@@ -246,13 +246,18 @@ function Home() {
               frameIndex++;
               setTimeout(showNextFrame, delay);
             };
+            img.onerror = () => {
+              // Se a imagem não carregar, pula para a próxima
+              frameIndex++;
+              setTimeout(showNextFrame, 100);
+            };
           } else {
             // Keep the last frame visible until the flash effect
             setTimeout(() => {
               animationContainer.classList.add('fadeout');
               setTimeout(() => {
                 document.body.removeChild(animationContainer);
-                window.location.href = '/pikachu-aime';
+                navigate('/pikachu-aime');
               }, 1000);
             }, 1000); // Wait for the last frame's delay
           }
