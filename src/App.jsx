@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import PortfolioSelection from './pages/portfolioSelection';
 import Home from './pages/home';
 import StartPage from './pages/start';
 import PikachuAime from './pages/paime';
@@ -12,7 +13,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<StartPage />} />
+        <Route path="/" element={<PortfolioSelection />} />
+        <Route path="/start" element={<StartPage />} />
         <Route path="/home" element={<Home />} />
         <Route path="/professor-tutorial" element={<ProfessorTutorial />} />
         <Route path="/pikachu-aime" element={<PikachuAime />} />

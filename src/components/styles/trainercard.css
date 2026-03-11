@@ -10,12 +10,23 @@
   align-items: center;
   padding: 20px;
   backdrop-filter: blur(15px); /* Enhanced blur effect */
+  position: relative;
 }
 
 .trainer-card-image {
   width: 100%;
   height: auto;
   border-radius: 2px; /* Further reduced border radius for the image */
+  display: block;
+  position: absolute;
+}
+
+.trainer-card-video {
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+  display: none;
+  position: absolute;
 }
 
 /* Adjusted Card Swap Button to the middle of the right side */
@@ -27,26 +38,98 @@
 }
 
 .card-swap-button {
-  position: absolute;
-  right: -270px; /* Positioned to the middle of the right side */
-  top: 50%; /* Centered vertically */
-  transform: translateY(-50%);
+  position: fixed;
+  top: 30px;
+  right: 30px;
   width: 200px; /* Same size as original buttons */
   height: 200px; /* Same size as original buttons */
   cursor: pointer;
-  z-index: 10;
+  z-index: 10001;
   opacity: 0; /* Initially hidden */
-  animation: slide-in-right 0.5s ease forwards; /* Slide-in animation */
+  animation: fade-in 0.5s ease forwards; /* Fade-in animation */
   animation-delay: 0.25s; /* Starts after the modal blur appears */
 }
 
-@keyframes slide-in-right {
+@keyframes fade-in {
   from {
-    transform: translate(100%, -50%); /* Start off-screen to the right */
     opacity: 0;
+    transform: scale(0.8);
   }
   to {
-    transform: translateY(-50%); /* End at the centered position */
     opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ====== MOBILE RESPONSIVE STYLES ====== */
+
+/* Mobile Portrait - 568px and smaller */
+@media (max-width: 568px) {
+  .trainer-card-container {
+    flex-direction: column;
+    gap: 0px;
+  }
+
+  .trainer-card {
+    width: 95vw;
+    max-width: 500px;
+    padding: 20px;
+  }
+
+  .trainer-card-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .card-swap-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 110px;
+    height: 110px;
+  }
+}
+
+/* Extra Small Phones - 375px and smaller */
+@media (max-width: 375px) {
+  .trainer-card-container {
+    flex-direction: column;
+    gap: 0px;
+  }
+
+  .trainer-card {
+    width: 90vw;
+    max-width: 420px;
+    padding: 18px;
+  }
+
+  .card-swap-button {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    width: 90px;
+    height: 90px;
+  }
+}
+
+/* Landscape Mode - 812px width and limited height */
+@media (max-width: 812px) and (max-height: 500px) {
+  .trainer-card-container {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .trainer-card {
+    width: 60vw;
+    max-width: 350px;
+    padding: 12px;
+  }
+
+  .card-swap-button {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 90px;
+    height: 90px;
   }
 }

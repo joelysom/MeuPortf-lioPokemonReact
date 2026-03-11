@@ -15,10 +15,12 @@ const PAime = () => {
   const [showTamagochi, setShowTamagochi] = useState(false);
 
   // Editable configuration for zoom, position, and rotation
+  const isMobile = window.innerWidth <= 568;
+  
   const modelConfig = {
     initialPosition: { x: 2, y: -3.4, z: -0.9 },
-    initialRotation: { x: 0.1, y: -0.3, z: 0 },
-    initialZoom: 1.7,
+    initialRotation: isMobile ? { x: 0.1, y: 0.5, z: 0 } : { x: 0.1, y: -0.3, z: 0 },
+    initialZoom: isMobile ? 2.2 : 1.7,
   };
 
   useEffect(() => {

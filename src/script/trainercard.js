@@ -2,7 +2,12 @@
 export function setupCardFlip() {
   const cardContainer = document.querySelector('.trainer-card');
   const cardImage = document.querySelector('.trainer-card-image');
+  const cardVideo = document.querySelector('.trainer-card-video');
   const cardSwapButton = document.querySelector('.card-swap-button');
+
+  const isMobile = window.innerWidth <= 568;
+  const frontImage = isMobile ? '/assets/aboutme/FullStackJoey.svg' : '/assets/aboutme/trainercard.svg';
+  const backImage = '/assets/aboutme/trainercard_back.svg';
 
   let isFront = true; // Track which side is currently visible
 
@@ -12,9 +17,24 @@ export function setupCardFlip() {
 
     setTimeout(() => {
       if (isFront) {
-        cardImage.src = '/assets/aboutme/trainercard_back.svg';
+        if (isMobile && cardVideo) {
+          cardImage.style.display = 'none';
+          cardVideo.style.display = 'block';
+          cardVideo.play();
+          console.log('Showing video');
+        } else {
+          cardImage.src = backImage;
+        }
       } else {
-        cardImage.src = '/assets/aboutme/trainercard.svg';
+        if (isMobile && cardVideo) {
+          cardVideo.style.display = 'none';
+          cardImage.style.display = 'block';
+          cardVideo.pause();
+          cardVideo.currentTime = 0;
+          console.log('Showing image');
+        } else {
+          cardImage.src = frontImage;
+        }
       }
       isFront = !isFront;
       cardContainer.style.transition = 'transform 0.6s ease-out'; // Smooth return transition

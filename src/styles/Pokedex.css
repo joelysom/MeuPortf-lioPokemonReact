@@ -316,24 +316,31 @@
 
 .dpad {
   position: relative;
-  width: 150px; /* Increased size */
-  height: 150px; /* Increased size */
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 2px;
+  width: 80px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0;
 }
 
 .dpad-button {
   background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
   border: none;
   color: #666;
-  font-size: 18px; /* Increased font size */
+  font-size: 24px;
   cursor: pointer;
   transition: all 0.1s ease;
   box-shadow: 
-    0 6px 0 #0a0a0a, /* Adjusted shadow for larger buttons */
+    0 6px 0 #0a0a0a,
     inset 0 2px 4px rgba(255, 255, 255, 0.1);
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .dpad-button:active {
@@ -344,34 +351,22 @@
 }
 
 .dpad-up {
-  grid-column: 2;
-  grid-row: 1;
-  border-radius: 8px 8px 0 0;
-}
-
-.dpad-left {
-  grid-column: 1;
-  grid-row: 2;
-  border-radius: 8px 0 0 8px;
-}
-
-.dpad-center {
-  grid-column: 2;
-  grid-row: 2;
-  background: radial-gradient(circle, #1a1a1a 0%, #0a0a0a 100%);
-  border-radius: 50%;
-}
-
-.dpad-right {
-  grid-column: 3;
-  grid-row: 2;
-  border-radius: 0 8px 8px 0;
+  margin-bottom: 50px;
 }
 
 .dpad-down {
-  grid-column: 2;
-  grid-row: 3;
-  border-radius: 0 0 8px 8px;
+  margin-top: 50px;
+}
+
+.dpad-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, #1a1a1a 0%, #0a0a0a 100%);
+  border-radius: 50%;
 }
 
 /* Right Controls */
@@ -495,22 +490,160 @@
   }
   
   .dpad {
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 160px;
+  }
+  
+  .dpad-button {
+    font-size: 20px;
+    width: 55px;
+    height: 55px;
+    box-shadow: 
+      0 5px 0 #0a0a0a,
+      inset 0 1px 2px rgba(255, 255, 255, 0.1);
+  }
+  
+  .dpad-button:active {
+    box-shadow: 
+      0 3px 0 #0a0a0a,
+      inset 0 1px 2px rgba(255, 255, 255, 0.1);
   }
   
   .action-btn {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
+    font-size: 14px;
+  }
+  
+  .action-btn:active {
+    transform: translateY(2px);
   }
   
   .pokedex-bottom {
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
   }
   
   .action-buttons {
     justify-content: center;
+  }
+}
+
+@media (max-width: 568px) {
+  .dpad {
+    width: 65px;
+    height: 150px;
+  }
+  
+  .dpad-button {
+    font-size: 18px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .action-btn {
+    width: 55px;
+    height: 55px;
+  }
+  
+  .pokedex-top,
+  .pokedex-bottom {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 375px) {
+  .pokedex {
+    height: 85vh;
+  }
+  
+  .pokedex-top,
+  .pokedex-bottom {
+    padding: 12px;
+  }
+  
+  .led-lights {
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+  
+  .led-main {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .led-small {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .screen {
+    min-height: 220px;
+    padding: 10px;
+  }
+  
+  .project-title {
+    font-size: 14px;
+  }
+  
+  .project-description {
+    font-size: 11px;
+  }
+  
+  .project-number {
+    font-size: 11px;
+  }
+  
+  .project-type {
+    font-size: 10px;
+  }
+  
+  .dpad {
+    width: 55px;
+    height: 130px;
+  }
+  
+  .dpad-button {
+    font-size: 16px;
+    width: 42px;
+    height: 42px;
+    box-shadow: 
+      0 4px 0 #0a0a0a,
+      inset 0 2px 3px rgba(255, 255, 255, 0.2);
+  }
+  
+  .dpad-button:active {
+    transform: translateY(2px);
+    box-shadow: 
+      0 2px 0 #0a0a0a,
+      inset 0 1px 2px rgba(255, 255, 255, 0.2);
+  }
+  
+  .action-btn {
+    width: 48px;
+    height: 48px;
+    border: 3px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 
+      0 4px 0 rgba(0, 0, 0, 0.3),
+      inset 0 2px 3px rgba(255, 255, 255, 0.2);
+  }
+  
+  .action-btn:active {
+    transform: translateY(2px);
+    box-shadow: 
+      0 2px 0 rgba(0, 0, 0, 0.3),
+      inset 0 1px 2px rgba(255, 255, 255, 0.2);
+  }
+  
+  .mini-display {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+  
+  .bottom-btn {
+    width: 22px;
+    height: 10px;
+    font-size: 9px;
   }
 }
 

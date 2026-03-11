@@ -26,6 +26,16 @@ const StartPage = () => {
     };
   };
 
+  const handleButtonA = () => {
+    // Botão A tem o mesmo efeito do botão START
+    handleStart();
+  };
+
+  const handleButtonB = () => {
+    // Botão B volta para a página de seleção do portfolio
+    navigate('/');
+  };
+
   return (
     <div className={`${styles['start-page']} ${isShading ? styles['shade-effect'] : ''}`}>
       {/* VIDEO DE FUNDO */}
@@ -34,7 +44,7 @@ const StartPage = () => {
         autoPlay
         loop
         muted
-        playsInline // importante para mobile
+        playsInline
       >
         <source src={startVideo} type="video/mp4" />
         Seu navegador não suporta vídeo.
@@ -44,6 +54,24 @@ const StartPage = () => {
       <button className={styles['start-button']} onClick={handleStart}>
         <img src={pressStartImg} alt="Press Start" />
       </button>
+
+      {/* GAMEBOY BUTTONS - Mobile Only */}
+      <div className={styles['gameboy-controls']}>
+        {/* D-Pad */}
+        <div className={styles['dpad']}>
+          <div className={styles['dpad-up']}></div>
+          <div className={styles['dpad-left']}></div>
+          <div className={styles['dpad-center']}></div>
+          <div className={styles['dpad-right']}></div>
+          <div className={styles['dpad-down']}></div>
+        </div>
+
+        {/* A/B Buttons */}
+        <div className={styles['ab-buttons']}>
+          <button className={styles['btn-b']} onClick={handleButtonB}>B</button>
+          <button className={styles['btn-a']} onClick={handleButtonA}>A</button>
+        </div>
+      </div>
     </div>
   );
 };

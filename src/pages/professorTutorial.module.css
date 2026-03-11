@@ -39,6 +39,7 @@
   height: auto;
   display: block;
   image-rendering: pixelated;
+  object-fit: contain;
   filter: drop-shadow(0 10px 20px rgba(0,0,0,0.45));
 }
 
@@ -409,4 +410,453 @@
   0% { opacity: 0; }
   20% { opacity: 1; }
   100% { opacity: 1; }
+}
+
+/* ========== ENHANCED PROFESSIONAL MOBILE DESIGN ========== */
+/* Mobile Portrait: 568px and below - Detalhado e Profissional */
+@media (max-width: 568px) {
+  .professorPageWrapper {
+    background: linear-gradient(135deg, #3a4a52 0%, #2a3a42 50%, #1a2a32 100%);
+    flex-direction: column;
+    overflow-y: auto;
+    padding: 16px;
+    box-sizing: border-box;
+    justify-content: flex-start;
+  }
+
+  /* Professor animation - redimensionado para mobile com melhor espaçamento */
+  .professorAnimationBox {
+    padding: 0;
+    padding-bottom: 12px;
+    width: 100%;
+    height: auto;
+    margin-top: 8px;
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .professorAnimationImage {
+    width: 100%;
+    max-width: 260px;
+    max-height: 300px;
+    height: auto;
+    display: block;
+    image-rendering: pixelated;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
+  }
+
+  /* Quando começa o tutorial, ajuste para mobile */
+  .shiftRight {
+    transform: translateX(0) translateY(0) scale(0.92);
+  }
+
+  /* Chatbox mobile - estilo profissional detalhado */
+  .professorChatboxWrapper {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin-top: 10px;
+    z-index: 60;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  .professorChatbox {
+    pointer-events: auto;
+    width: 100%;
+    background: linear-gradient(180deg, #f5f8fc 0%, #e8eef8 100%);
+    border: 4px solid #1f2b63;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5),
+                inset 0 1px 0 rgba(255,255,255,0.3);
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 160px;
+    max-height: 260px;
+    overflow-y: auto;
+    position: relative;
+  }
+
+  .professorChatboxText {
+    flex: 1 1 auto;
+    min-height: 50px;
+    color: #07204a;
+    font-family: 'PokemonEmerald', sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    padding-left: 8px;
+    padding-right: 50px;
+    box-sizing: border-box;
+    white-space: pre-wrap;
+    text-align: left;
+    align-self: stretch;
+    word-break: break-word;
+    font-weight: 500;
+  }
+
+  .professorChatboxActions {
+    position: static;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+    flex-wrap: wrap;
+    gap: 8px;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .professorChatboxButton {
+    pointer-events: auto;
+    background: linear-gradient(180deg, #ffd86b 0%, #ffb84e 100%);
+    border: 3px solid #6b3e00;
+    color: #2b1600;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: 900;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 6px 0 rgba(0,0,0,0.25),
+                inset 0 1px 0 rgba(255,255,255,0.3);
+    transition: all 0.15s cubic-bezier(0.4, 0, 1, 1);
+    font-family: 'PokemonEmerald', sans-serif;
+    width: 100%;
+    text-align: center;
+  }
+
+  .professorChatboxButton:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 rgba(0,0,0,0.15),
+                inset 0 1px 0 rgba(255,255,255,0.3);
+  }
+
+  /* Name input wrapper mobile */
+  .nameInputWrapper {
+    pointer-events: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .nameInput {
+    padding: 11px 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 2px solid #6b3e00;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'PokemonEmerald', sans-serif;
+    color: #07204a;
+    transition: border-color 200ms ease, box-shadow 200ms ease;
+  }
+
+  .nameInput:focus {
+    outline: none;
+    border-color: #1f2b63;
+    box-shadow: 0 0 0 3px rgba(31, 43, 99, 0.1), 0 2px 4px rgba(0,0,0,0.08);
+  }
+
+  .nameConfirmButton {
+    padding: 11px 14px;
+    border-radius: 8px;
+    background: linear-gradient(180deg, #9ee37a 0%, #6bd24a 100%);
+    border: 2px solid #2f6b1f;
+    color: #06320a;
+    font-weight: 800;
+    cursor: pointer;
+    pointer-events: auto;
+    font-size: 15px;
+    font-family: 'PokemonEmerald', sans-serif;
+    box-shadow: 0 4px 0 rgba(0,0,0,0.15),
+                inset 0 1px 0 rgba(255,255,255,0.3);
+    transition: all 0.15s cubic-bezier(0.4, 0, 1, 1);
+    width: 100%;
+  }
+
+  .nameConfirmButton:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 rgba(0,0,0,0.1),
+                inset 0 1px 0 rgba(255,255,255,0.3);
+  }
+
+  /* Next arrow mobile - profissional e acessível */
+  .professorChatboxNext {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    width: 48px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(31, 43, 99, 0.08);
+    border: 2px solid #1f2b63;
+    cursor: pointer;
+    border-radius: 6px;
+    image-rendering: pixelated;
+    padding: 0;
+    z-index: 80;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .professorChatboxNext:active {
+    background: rgba(31, 43, 99, 0.16);
+    transform: scale(0.92);
+  }
+
+  .professorChev {
+    width: 0;
+    height: 0;
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    border-top: 16px solid #07204a;
+    transform-origin: center;
+    image-rendering: pixelated;
+    animation: bob 700ms cubic-bezier(.4,0,.2,1) infinite;
+  }
+
+  /* Start card mobile - detalhado e profissional */
+  .startCard {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    width: 100%;
+    min-height: auto;
+    padding: 0;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 3px solid #1f2b63;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.35),
+                inset 0 1px 0 rgba(255,255,255,0.3);
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 400ms cubic-bezier(0.4, 0, 0.2, 1),
+                transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 70;
+    pointer-events: none;
+    margin-bottom: 12px;
+  }
+
+  .startCardVisible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .startCardContent {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    height: 100%;
+    gap: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .startCardContent h3 {
+    margin: 0;
+    padding: 10px 12px;
+    font-size: 15px;
+    color: #07204a;
+    background: linear-gradient(180deg, rgba(31, 43, 99, 0.06) 0%, rgba(31, 43, 99, 0.02) 100%);
+    border-bottom: 2px solid rgba(31, 43, 99, 0.12);
+    border-radius: 0;
+    align-self: stretch;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* Tutorial image mobile */
+  .startCardImage {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 220px;
+    object-fit: contain;
+    margin: 0;
+    image-rendering: pixelated;
+    border-radius: 0;
+    background: rgba(0,0,0,0.02);
+    padding: 8px;
+    box-sizing: border-box;
+    box-shadow: none;
+  }
+
+  /* Overlay mobile */
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    transition: background 300ms ease, opacity 2500ms ease;
+    opacity: 1;
+    z-index: 50;
+  }
+
+  .overlayWhiteFade {
+    background: rgba(255,255,255,0.98);
+    opacity: 0;
+  }
+
+  /* Highlight button no mobile - mais visível */
+  .highlightButton {
+    box-shadow: 0 8px 16px rgba(255, 200, 60, 0.35),
+                0 4px 0 rgba(0,0,0,0.25),
+                inset 0 1px 0 rgba(255,255,255,0.3) !important;
+    transform: translateY(-2px) scale(1.03) !important;
+    transition: transform 220ms cubic-bezier(0.4, 0, 1, 1),
+                box-shadow 220ms ease !important;
+  }
+}
+
+/* Mobile Extra Small (até 375px) - iPhone SE e menores */
+@media (max-width: 375px) {
+  .professorPageWrapper {
+    padding: 12px;
+  }
+
+  .professorAnimationBox {
+    min-height: 200px;
+    padding-bottom: 8px;
+  }
+
+  .professorAnimationImage {
+    max-width: 220px;
+    max-height: 260px;
+  }
+
+  .professorChatbox {
+    padding: 12px;
+    min-height: 150px;
+    max-height: 240px;
+  }
+
+  .professorChatboxText {
+    font-size: 16px;
+    padding-right: 45px;
+    min-height: 45px;
+  }
+
+  .professorChatboxButton {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+
+  .nameInput,
+  .nameConfirmButton {
+    font-size: 15px;
+    padding: 10px 11px;
+  }
+
+  .professorChatboxNext {
+    width: 44px;
+    height: 36px;
+  }
+
+  .professorChev {
+    border-left-width: 9px;
+    border-right-width: 9px;
+    border-top-width: 14px;
+  }
+
+  .startCard {
+    margin-bottom: 8px;
+  }
+
+  .startCardContent h3 {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .startCardImage {
+    max-height: 180px;
+    padding: 6px;
+  }
+}
+
+/* Mobile Landscape (565px < height < 520px, landscape) */
+@media (max-width: 812px) and (max-height: 500px) {
+  .professorPageWrapper {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px;
+    gap: 10px;
+    overflow-y: auto;
+  }
+
+  .professorAnimationBox {
+    flex: 0 0 35%;
+    width: 35%;
+    min-height: auto;
+    max-height: 100vh;
+    padding: 0;
+  }
+
+  .professorAnimationImage {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .professorChatboxWrapper {
+    flex: 1 1 65%;
+    width: 65%;
+    margin-top: 0;
+  }
+
+  .professorChatbox {
+    min-height: 140px;
+    max-height: 100%;
+    padding: 10px;
+  }
+
+  .professorChatboxText {
+    font-size: 14px;
+    min-height: 35px;
+    padding-right: 40px;
+  }
+
+  .professorChatboxButton {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  .nameInput,
+  .nameConfirmButton {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .startCard {
+    width: 100%;
+    max-height: 200px;
+    margin-bottom: 0;
+  }
+
+  .startCardImage {
+    max-height: 140px;
+  }
 }

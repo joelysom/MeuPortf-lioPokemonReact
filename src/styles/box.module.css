@@ -332,3 +332,348 @@
   font-size: 12px;
   color: #000;
 }
+
+/* ====== MOBILE RESPONSIVE STYLES ====== */
+
+/* Mobile Portrait - 568px and smaller */
+@media (max-width: 568px) {
+  .pokemonBoxContainer {
+    background-size: cover;
+  }
+
+  .topNav {
+    height: 50px;
+    padding: 0 10px;
+    gap: 5px;
+  }
+
+  .topNavLeft,
+  .topNavRight {
+    gap: 5px;
+  }
+
+  .navButton {
+    padding: 6px 12px;
+    font-size: 12px;
+    gap: 6px;
+  }
+
+  .navButton span {
+    display: none;
+  }
+
+  .iconButton {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .mainContent {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.10);
+    padding: 15px 10px;
+    clip-path: none;
+    border-radius: 0;
+    max-height: 90px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .partyHeader {
+    display: none;
+  }
+
+  .partySlot {
+    min-width: 110px;
+    padding: 12px 15px;
+    border-radius: 20px;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .pokemonIcon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .pokemonIcon img {
+    transform: scale(1.8);
+    margin-bottom: 40px;
+  }
+
+  .pokemonName {
+    font-size: 9px;
+  }
+
+  .pokemonLevel {
+    font-size: 8px;
+  }
+
+  .boxArea {
+    flex: 1;
+    padding: 15px 10px;
+  }
+
+  .boxHeader {
+    margin-bottom: 15px;
+    gap: 15px;
+    margin-left: 0;
+  }
+
+  .boxArrow {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .boxTitle {
+    padding: 10px 30px;
+    font-size: 16px;
+  }
+
+  .pokemonGrid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 12px;
+    max-width: 100%;
+    margin: 0;
+    margin-left: 0;
+  }
+
+  .pokemonCell {
+    width: 100%;
+    height: 100px;
+  }
+
+  .pokemonSprite {
+    width: 90px;
+    height: 90px;
+  }
+
+  .bottomControls {
+    padding: 12px 8px;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .controlsLeft,
+  .controlsRight {
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .controlButton {
+    padding: 8px 12px;
+    font-size: 11px;
+    gap: 6px;
+  }
+
+  .controlButton span {
+    display: none;
+  }
+
+  .buttonIcon {
+    width: 14px;
+    height: 14px;
+    font-size: 10px;
+  }
+}
+
+/* Extra Small Phones - 375px and smaller */
+@media (max-width: 375px) {
+  .topNav {
+    height: 45px;
+    padding: 0 8px;
+  }
+
+  .navButton {
+    padding: 5px 10px;
+    font-size: 10px;
+  }
+
+  .iconButton {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+
+  .sidebar {
+    max-height: 80px;
+    padding: 12px 8px;
+  }
+
+  .partySlot {
+    min-width: 95px;
+    padding: 10px 12px;
+  }
+
+  .pokemonIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .boxArea {
+    padding: 12px 8px;
+  }
+
+  .boxHeader {
+    margin-bottom: 12px;
+    gap: 10px;
+  }
+
+  .boxArrow {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+
+  .boxTitle {
+    padding: 8px 25px;
+    font-size: 14px;
+  }
+
+  .pokemonGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .pokemonCell {
+    height: 85px;
+  }
+
+  .pokemonSprite {
+    width: 75px;
+    height: 75px;
+  }
+
+  .bottomControls {
+    padding: 10px 6px;
+  }
+
+  .controlButton {
+    padding: 6px 10px;
+    font-size: 10px;
+  }
+
+  .buttonIcon {
+    width: 12px;
+    height: 12px;
+    font-size: 8px;
+  }
+}
+
+/* Landscape Mode - 812px width and limited height */
+@media (max-width: 812px) and (max-height: 500px) {
+  .topNav {
+    height: 45px;
+    padding: 0 10px;
+  }
+
+  .navButton {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .navButton span {
+    display: none;
+  }
+
+  .iconButton {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+  }
+
+  .mainContent {
+    flex-direction: row;
+  }
+
+  .sidebar {
+    width: 120px;
+    border-right: 1px solid rgba(255,255,255,0.10);
+    border-bottom: none;
+    flex-direction: column;
+    padding: 10px 8px;
+    max-height: 100%;
+    overflow-y: auto;
+  }
+
+  .partySlot {
+    min-width: auto;
+    padding: 12px 10px;
+    gap: 8px;
+  }
+
+  .boxArea {
+    padding: 10px 15px;
+  }
+
+  .boxHeader {
+    margin-bottom: 10px;
+    gap: 12px;
+    margin-left: 0;
+  }
+
+  .boxArrow {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+
+  .boxTitle {
+    padding: 8px 25px;
+    font-size: 14px;
+  }
+
+  .pokemonGrid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    margin-left: 0;
+  }
+
+  .pokemonCell {
+    width: 100%;
+    height: 95px;
+  }
+
+  .pokemonSprite {
+    width: 85px;
+    height: 85px;
+  }
+
+  .bottomControls {
+    padding: 10px 8px;
+    gap: 6px;
+  }
+
+  .controlsLeft,
+  .controlsRight {
+    gap: 5px;
+  }
+
+  .controlButton {
+    padding: 6px 10px;
+    font-size: 10px;
+    gap: 5px;
+  }
+
+  .controlButton span {
+    display: none;
+  }
+
+  .buttonIcon {
+    width: 13px;
+    height: 13px;
+    font-size: 9px;
+  }
+}

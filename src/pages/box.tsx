@@ -10,6 +10,7 @@ import styles from '../styles/box.module.css';
 const Index = () => {
   const navigate = useNavigate();
   const modelRef = useRef<HTMLDivElement | null>(null);
+  const isMobile = window.innerWidth <= 568;
 
   const handleBackNavigation = () => {
     navigate('/home');
@@ -49,6 +50,7 @@ const Index = () => {
     );
     renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(isMobile ? 0.8 : 1);
     (renderer as any).outputEncoding = THREE.LinearToneMapping;
     renderer.toneMapping = THREE.NoToneMapping;
     renderer.shadowMap.enabled = false;
@@ -56,6 +58,7 @@ const Index = () => {
     renderer.domElement.style.top = '0';
     renderer.domElement.style.right = '0';
     renderer.domElement.style.zIndex = '1';
+    renderer.domElement.style.display = isMobile ? 'none' : 'block';
     modelRef.current?.appendChild(renderer.domElement);
 
     controls = new OrbitControls(camera, renderer.domElement);
@@ -269,17 +272,23 @@ const Index = () => {
                   key={pokemon.id}
                   className={styles.pokemonCell}
                   onMouseEnter={() => {
-                    if (pokemon.id === 1) handleHover('/assets/box/models/azurill/azurill.glb', 'azurill');
-                    if (pokemon.id === 2) handleHover('/assets/box/models/bulbasaur/bulbasaur.glb', 'bulbasaur');
-                    if (pokemon.id === 3) handleHover('/assets/box/models/gardevoir/gardevoir.glb', 'gardevoir');
-                    if (pokemon.id === 4) handleHover('/assets/box/models/charmander/charmander.glb', 'charmander');
-                    if (pokemon.id === 5) handleHover('/assets/box/models/gallade/gallade.glb', 'gallade');
-                    if (pokemon.id === 6) handleHover('/assets/box/models/butterfree/butterfree.glb', 'butterfree');
-                    if (pokemon.id === 7) handleHover('/assets/box/models/jirachi/jirachi.glb', 'jirachi');
-                    if (pokemon.id === 8) handleHover('/assets/box/models/squirtle/squirtle.glb', 'squirtle');
-                    if (pokemon.id === 9) handleHover('/assets/box/models/togetic/togetic.glb', 'togetic');
+                    if (!isMobile) {
+                      if (pokemon.id === 1) handleHover('/assets/box/models/azurill/azurill.glb', 'azurill');
+                      if (pokemon.id === 2) handleHover('/assets/box/models/bulbasaur/bulbasaur.glb', 'bulbasaur');
+                      if (pokemon.id === 3) handleHover('/assets/box/models/gardevoir/gardevoir.glb', 'gardevoir');
+                      if (pokemon.id === 4) handleHover('/assets/box/models/charmander/charmander.glb', 'charmander');
+                      if (pokemon.id === 5) handleHover('/assets/box/models/gallade/gallade.glb', 'gallade');
+                      if (pokemon.id === 6) handleHover('/assets/box/models/butterfree/butterfree.glb', 'butterfree');
+                      if (pokemon.id === 7) handleHover('/assets/box/models/jirachi/jirachi.glb', 'jirachi');
+                      if (pokemon.id === 8) handleHover('/assets/box/models/squirtle/squirtle.glb', 'squirtle');
+                      if (pokemon.id === 9) handleHover('/assets/box/models/togetic/togetic.glb', 'togetic');
+                    }
                   }}
-                  onMouseLeave={resetToDefaultModel}
+                  onMouseLeave={() => {
+                    if (!isMobile) {
+                      resetToDefaultModel();
+                    }
+                  }}
                   onClick={() => {
                     const modelMap: Record<number, { modelPath: string; configKey: string; name: string }> = {
                       1: { modelPath: '/assets/box/models/azurill/azurill.glb', configKey: 'azurill', name: 'Azurill' },

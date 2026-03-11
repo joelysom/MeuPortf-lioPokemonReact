@@ -14,6 +14,7 @@ const Index = () => {
   const state = (location.state || {}) as { modelPath?: string; configKey?: string; name?: string };
   const modelRef = useRef<HTMLDivElement | null>(null);
   const [modelLoaded, setModelLoaded] = useState(false);
+  const isMobile = window.innerWidth <= 568;
 
   useEffect(() => {
     if (!state.modelPath || !modelRef.current) return;
@@ -27,6 +28,7 @@ const Index = () => {
     camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(isMobile ? 0.8 : 1);
     (renderer as any).outputEncoding = THREE.LinearToneMapping;
     renderer.toneMapping = THREE.NoToneMapping;
     renderer.shadowMap.enabled = false;
@@ -49,8 +51,8 @@ const Index = () => {
         const model = SkeletonUtils.clone(gltf.scene);
         scene.add(model);
 
-        // apply defaults or per-model configuration when available
-        const modelConfigurations: Record<string, { position: [number, number, number]; rotation: [number, number, number]; scale: [number, number, number] }> = {
+        // Desktop model configurations
+        const desktopModelConfigurations: Record<string, { position: [number, number, number]; rotation: [number, number, number]; scale: [number, number, number] }> = {
           mew: { position: [1.8, -0.8, 0], rotation: [0, 5.5, 0], scale: [2.1, 2.1, 2.1] },
           azurill: { position: [1.8, -0.8, 0], rotation: [0, 5.2, 0], scale: [2.9, 2.9, 2.9] },
           bulbasaur: { position: [1.6, -0.7, 0], rotation: [0, 5.2, 0], scale: [1.5, 1.5, 1.5] },
@@ -63,6 +65,21 @@ const Index = () => {
           jirachi: { position: [1.6, -0.7, 0], rotation: [0, 5.3, 0], scale: [1.7, 1.7, 1.7] },
         };
 
+        // Mobile model configurations
+        const mobileModelConfigurations: Record<string, { position: [number, number, number]; rotation: [number, number, number]; scale: [number, number, number] }> = {
+          mew: { position: [0, 0, 0], rotation: [0, 5.5, 0], scale: [1.9, 1.9, 1.9] },
+          azurill: { position: [0, 0.3, 0], rotation: [0, 5.2, 0], scale: [2.7, 2.7, 2.7] },
+          bulbasaur: { position: [0, 0.3, 0], rotation: [0, 5.2, 0], scale: [1.2, 1.2, 1.2] },
+          gardevoir: { position: [0, 0.1, 0], rotation: [0, 5.6, 0], scale: [1.0, 1.0, 1.0] },
+          charmander: { position: [0, 0.3, 0], rotation: [0, 5.4, 0], scale: [1.5, 1.5, 1.5] },
+          squirtle: { position: [0, 0.3, 0], rotation: [0, 5.2, 0], scale: [1.8, 1.8, 1.8] },
+          togetic: { position: [0, 0.3, 0], rotation: [0, 5.5, 0], scale: [1.8, 1.8, 1.8] },
+          gallade: { position: [0, 0.1, 0], rotation: [0, 5.0, 0], scale: [1.0, 1.0, 1.0] },
+          butterfree: { position: [0, 0.4, 0], rotation: [0, 5.2, 0], scale: [1.2, 1.2, 1.2] },
+          jirachi: { position: [0, 0.3, 0], rotation: [0, 5.3, 0], scale: [2.9, 2.9, 2.9] },
+        };
+
+        const modelConfigurations = isMobile ? mobileModelConfigurations : desktopModelConfigurations;
         const config = state.configKey ? modelConfigurations[state.configKey] : modelConfigurations.mew;
         model.position.set(...config.position);
         model.rotation.set(...config.rotation);
@@ -107,7 +124,7 @@ const Index = () => {
     const fillLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 1.5);
     scene.add(ambientLight, fillLight);
 
-    camera.position.z = 1.9;
+    camera.position.z = isMobile ? 2.8 : 1.9;
 
     const handleResize = () => {
       camera.aspect = window.innerWidth / window.innerHeight;
@@ -121,7 +138,7 @@ const Index = () => {
       if (modelRef.current) modelRef.current.removeChild(renderer.domElement);
       window.removeEventListener('resize', handleResize);
     };
-  }, [state.modelPath]);
+  }, [state.modelPath, isMobile]);
 
   const goBack = () => navigate("/box");
   const onBackKey = (e: React.KeyboardEvent<HTMLDivElement>) => {

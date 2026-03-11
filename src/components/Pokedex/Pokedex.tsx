@@ -42,7 +42,7 @@ const portfolioData: PortfolioItem[] = [
     description: "Entre em contato comigo pelo WhatsApp para colaborações, ideias e novos projetos.",
     skills: ["(xx) 9xxxx-xxxx", "Comunicação Rápida", "Networking", "Feedback Ágil"],
     level: 88,
-    link: "https://wa.me/55xxxxxxxxxx", // coloque seu número aqui no formato 55DDDNÚMERO
+    link: "https://wa.me/558188872515", // coloque seu número aqui no formato 55DDDNÚMERO
     icon: <MessageCircle size={32} color="#0f380f" />
   },
   {
@@ -187,9 +187,7 @@ const Pokedex = () => {
         <div className="controls-left">
           <div className="dpad">
             <button className="dpad-button dpad-up" onClick={handlePrev}>▲</button>
-            <button className="dpad-button dpad-left">◄</button>
             <div className="dpad-center"></div>
-            <button className="dpad-button dpad-right">►</button>
             <button className="dpad-button dpad-down" onClick={handleNext}>▼</button>
           </div>
         </div>

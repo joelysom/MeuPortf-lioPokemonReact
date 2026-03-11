@@ -436,3 +436,579 @@
   .solidario-card .solidario-slider { width: 100%; flex: none; }
   .solidario-text { width: 100%; }
 }
+
+/* ====== MOBILE RESPONSIVE STYLES ====== */
+
+/* Mobile Portrait - 568px and smaller */
+@media (max-width: 568px) {
+  .pokemon-container {
+    background: #f5f5f5;
+  }
+
+  .top-nav {
+    height: 60px;
+    padding: 0 15px;
+  }
+
+  .nav-left {
+    gap: 12px;
+  }
+
+  .nav-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+  }
+
+  .diagonal-overlay {
+    display: none;
+  }
+
+  .content-wrapper {
+    flex-direction: column;
+    background: #f5f5f5;
+  }
+
+  .info-panel,
+  .pokemon-display {
+    width: 100%;
+  }
+
+  .info-panel {
+    padding: 20px 15px;
+    min-height: 40vh;
+  }
+
+  .info-content {
+    overflow-y: auto;
+    max-height: 35vh;
+  }
+
+  .info-text {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+
+  .project-image {
+    max-width: 90% !important;
+    max-height: 180px !important;
+  }
+
+  .diagonal-red-bottom {
+    display: none;
+  }
+
+  .pokemon-display {
+    background: #f5f5f5;
+    min-height: 50vh;
+    padding: 10px 0;
+  }
+
+  .pokemon-header {
+    padding: 15px 15px 10px;
+  }
+
+  .header-bg {
+    height: 55px;
+    padding: 0 15px;
+    gap: 12px;
+    border-radius: 8px;
+  }
+
+  .pokeball-icon {
+    width: 32px;
+    height: 32px;
+    border: 2px solid #666;
+  }
+
+  .pokemon-name,
+  .pokemon-level {
+    font-size: 20px;
+  }
+
+  .notification-badge {
+    width: 24px;
+    height: 24px;
+    border: 2px solid white;
+  }
+
+  .header-arrow {
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #dc3545;
+  }
+
+  .pokemon-scene {
+    padding: 15px;
+    min-height: 40vh;
+  }
+
+  .model-canvas {
+    margin-bottom: 100px;
+  }
+
+  .background-circle {
+    width: 250px;
+    height: 250px;
+  }
+
+  .pokemon-sprite {
+    width: 200px;
+    height: 200px;
+  }
+
+  .bottom-nav {
+    height: 50px;
+    padding: 0 15px;
+  }
+
+  .back-button {
+    gap: 8px;
+  }
+
+  .back-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+
+  .back-text {
+    font-size: 14px;
+  }
+
+  .solidario-slider {
+    height: 200px;
+  }
+
+  .prodtech-slider {
+    height: 150px;
+  }
+}
+
+/* Extra Small Phones - 375px and smaller */
+@media (max-width: 375px) {
+  .top-nav {
+    height: 50px;
+  }
+
+  .nav-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+
+  .info-panel {
+    padding: 15px 12px;
+  }
+
+  .info-text {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+
+  .project-image {
+    max-width: 90% !important;
+    max-height: 150px !important;
+  }
+
+  .header-bg {
+    height: 50px;
+    padding: 0 12px;
+    gap: 10px;
+  }
+
+  .pokemon-name,
+  .pokemon-level {
+    font-size: 16px;
+  }
+
+  .pokemon-scene {
+    padding: 12px;
+  }
+
+  .background-circle {
+    width: 200px;
+    height: 200px;
+  }
+
+  .pokemon-sprite {
+    width: 150px;
+    height: 150px;
+  }
+
+  .bottom-nav {
+    height: 45px;
+    padding: 0 12px;
+  }
+
+  .back-icon {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+  }
+
+  .back-text {
+    font-size: 12px;
+  }
+
+  .solidario-slider {
+    height: 150px;
+  }
+
+  .prodtech-slider {
+    height: 120px;
+  }
+}
+
+/* Landscape Mode - 812px width and limited height */
+@media (max-width: 812px) and (max-height: 500px) {
+  .pokemon-container {
+    height: auto;
+  }
+
+  .top-nav {
+    height: 50px;
+  }
+
+  .nav-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+
+  .content-wrapper {
+    flex-direction: row;
+    background: linear-gradient(to right, #f5f5f5 50%, #d4f0f0 50%);
+  }
+
+  .info-panel,
+  .pokemon-display {
+    width: 50%;
+  }
+
+  .info-panel {
+    padding: 20px 20px;
+    max-height: 400px;
+    overflow-y: auto;
+  }
+
+  .info-text {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .pokemon-scene {
+    padding: 20px;
+  }
+
+  .background-circle {
+    width: 280px;
+    height: 280px;
+  }
+
+  .pokemon-sprite {
+    width: 220px;
+    height: 220px;
+  }
+
+  .bottom-nav {
+    height: 45px;
+  }
+
+  .solidario-slider {
+    height: 180px;
+  }
+
+  .prodtech-slider {
+    height: 130px;
+  }
+}
+
+/* ====== MOBILE RESPONSIVE STYLES ====== */
+
+/* Mobile Portrait - 568px and smaller */
+@media (max-width: 568px) {
+  .pokemon-container {
+    background: #f5f5f5;
+  }
+
+  .top-nav {
+    height: 60px;
+    padding: 0 15px;
+  }
+
+  .nav-left {
+    gap: 12px;
+  }
+
+  .nav-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+  }
+
+  .diagonal-overlay {
+    display: none;
+  }
+
+  .content-wrapper {
+    flex-direction: column;
+    background: #f5f5f5;
+  }
+
+  .info-panel,
+  .pokemon-display {
+    width: 100%;
+  }
+
+  .info-panel {
+    padding: 20px 15px;
+    min-height: 40vh;
+  }
+
+  .info-content {
+    overflow-y: auto;
+    max-height: 35vh;
+  }
+
+  .info-text {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+
+  .project-image {
+    max-width: 90% !important;
+    max-height: 180px !important;
+  }
+
+  .diagonal-red-bottom {
+    display: none;
+  }
+
+  .pokemon-display {
+    background: #f5f5f5;
+    min-height: 50vh;
+    padding: 10px 0;
+  }
+
+  .pokemon-header {
+    padding: 15px 15px 10px;
+  }
+
+  .header-bg {
+    height: 55px;
+    padding: 0 15px;
+    gap: 12px;
+    border-radius: 8px;
+  }
+
+  .pokeball-icon {
+    width: 32px;
+    height: 32px;
+    border: 2px solid #666;
+  }
+
+  .pokemon-name,
+  .pokemon-level {
+    font-size: 20px;
+  }
+
+  .notification-badge {
+    width: 24px;
+    height: 24px;
+    border: 2px solid white;
+  }
+
+  .header-arrow {
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #dc3545;
+  }
+
+  .pokemon-scene {
+    padding: 15px;
+    min-height: 40vh;
+  }
+
+  .model-canvas {
+    margin-bottom: 100px;
+  }
+
+  .background-circle {
+    width: 250px;
+    height: 250px;
+  }
+
+  .pokemon-sprite {
+    width: 200px;
+    height: 200px;
+  }
+
+  .bottom-nav {
+    height: 50px;
+    padding: 0 15px;
+  }
+
+  .back-button {
+    gap: 8px;
+  }
+
+  .back-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+
+  .back-text {
+    font-size: 14px;
+  }
+
+  .solidario-slider {
+    height: 200px;
+  }
+
+  .prodtech-slider {
+    height: 150px;
+  }
+}
+
+/* Extra Small Phones - 375px and smaller */
+@media (max-width: 375px) {
+  .top-nav {
+    height: 50px;
+  }
+
+  .nav-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+
+  .info-panel {
+    padding: 15px 12px;
+  }
+
+  .info-text {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+
+  .project-image {
+    max-width: 90% !important;
+    max-height: 150px !important;
+  }
+
+  .header-bg {
+    height: 50px;
+    padding: 0 12px;
+    gap: 10px;
+  }
+
+  .pokemon-name,
+  .pokemon-level {
+    font-size: 16px;
+  }
+
+  .pokemon-scene {
+    padding: 12px;
+  }
+
+  .background-circle {
+    width: 200px;
+    height: 200px;
+  }
+
+  .pokemon-sprite {
+    width: 150px;
+    height: 150px;
+  }
+
+  .bottom-nav {
+    height: 45px;
+    padding: 0 12px;
+  }
+
+  .back-icon {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+  }
+
+  .back-text {
+    font-size: 12px;
+  }
+
+  .solidario-slider {
+    height: 150px;
+  }
+
+  .prodtech-slider {
+    height: 120px;
+  }
+}
+
+/* Landscape Mode - 812px width and limited height */
+@media (max-width: 812px) and (max-height: 500px) {
+  .pokemon-container {
+    height: auto;
+  }
+
+  .top-nav {
+    height: 50px;
+  }
+
+  .nav-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+
+  .content-wrapper {
+    flex-direction: row;
+    background: linear-gradient(to right, #f5f5f5 50%, #d4f0f0 50%);
+  }
+
+  .info-panel,
+  .pokemon-display {
+    width: 50%;
+  }
+
+  .info-panel {
+    padding: 20px 20px;
+    max-height: 400px;
+    overflow-y: auto;
+  }
+
+  .info-text {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .pokemon-scene {
+    padding: 20px;
+  }
+
+  .background-circle {
+    width: 280px;
+    height: 280px;
+  }
+
+  .pokemon-sprite {
+    width: 220px;
+    height: 220px;
+  }
+
+  .bottom-nav {
+    height: 45px;
+  }
+
+  .solidario-slider {
+    height: 180px;
+  }
+
+  .prodtech-slider {
+    height: 130px;
+  }
+}
