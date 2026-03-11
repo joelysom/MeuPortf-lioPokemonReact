@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import styles from './professorTutorial.module.css';
+import styles from './professortutorial.module.css';
 
 const ProfessorTutorial: React.FC = () => {
 	const mainFrameCount = 10; // main animation frames 00..09 (public/assets/professor/animation/)

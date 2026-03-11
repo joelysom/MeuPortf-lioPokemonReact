@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import styles from "./Portfolio.module.css";
+import styles from "./portfolio.module.css";
 import profileImg from "../assets/profile/Joelysom.jfif";
 import MeteorShower from "../components/MeteorShower";
 

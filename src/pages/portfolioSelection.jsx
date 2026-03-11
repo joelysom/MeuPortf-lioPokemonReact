@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/portfolioSelection.css';
+import '../styles/portfolioselection.css';
 import profileImg from '../assets/profile/Pikachu.png';
 
 const PortfolioSelection = () => {

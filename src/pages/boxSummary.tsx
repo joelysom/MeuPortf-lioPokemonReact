@@ -1,6 +1,6 @@
 // fallback to a static path for the placeholder image to avoid TS asset typing issues
 const milceryImage = "/src/assets/milcery.png";
-import "../styles/PokemonInfo.css";
+import "../styles/pokemoninfo.css";
 import { useNavigate, useLocation } from "react-router-dom";
 import React, { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
