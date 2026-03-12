@@ -279,9 +279,9 @@ const Index = () => {
                 <div>
                   <div className="prodtech-slider">
                     <div className="prodtech-track">
-                      <img src="/assets/box/models/Projetos/RecnPlay2025_0.heic" alt="RecnPlay 2025 0" />
-                      <img src="/assets/box/models/Projetos/RecnPlay2025_1.heic" alt="RecnPlay 2025 1" />
-                      <img src="/assets/box/models/Projetos/RecnPlay2025_2.heic" alt="RecnPlay 2025 2" />
+                      <img src="/assets/box/models/Projetos/RecnPlay2025_0.png" alt="RecnPlay 2025 0" />
+                      <img src="/assets/box/models/Projetos/RecnPlay2025_1.png" alt="RecnPlay 2025 1" />
+                      <img src="/assets/box/models/Projetos/RecnPlay2025_2.png" alt="RecnPlay 2025 2" />
                     </div>
                   </div>
                   <p className="info-text">
