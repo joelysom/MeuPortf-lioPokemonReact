@@ -256,6 +256,57 @@ const Index = () => {
                   </div>
                 </div>
               </>
+            ) : state.configKey === 'gallade' ? (
+              <>
+                <div>
+                  <div className="prodtech-slider" style={{ position: 'relative', zIndex: 10 }}>
+                    <div className="prodtech-track">
+                      <img src="/assets/box/models/Projetos/Transforme-se_0.jfif" alt="Transforme-se 0" />
+                      <img src="/assets/box/models/Projetos/Transforme-se_1.jfif" alt="Transforme-se 1" />
+                    </div>
+                  </div>
+                  <p className="info-text" style={{ position: 'relative', zIndex: 10 }}>
+                    Participei do projeto <span className="highlight-blue">Transforme-se</span>, onde realizei cursos de informática básica, linguagem de programação, educação financeira e programação de sistemas. Durante a formação, recebi um <span className="highlight-blue">troféu de empenho nota 1000</span> pelo destaque no curso.
+                  </p>
+
+                  <p className="info-text" style={{ position: 'relative', zIndex: 10 }}>
+                    Também idealizei e apresentei o <span className="highlight-blue">Coony</span>, um aplicativo criado por mim e desenvolvido junto com a turma, com a proposta de ajudar pessoas a <span className="highlight-blue">se exercitarem e encontrarem corridas e eventos esportivos próximos</span>.
+                  </p>
+                </div>
+              </>
+            ) : state.configKey === 'butterfree' ? (
+              <>
+                <div>
+                  <div className="prodtech-slider">
+                    <div className="prodtech-track">
+                      <img src="/assets/box/models/Projetos/RecnPlay2025_0.heic" alt="RecnPlay 2025 0" />
+                      <img src="/assets/box/models/Projetos/RecnPlay2025_1.heic" alt="RecnPlay 2025 1" />
+                      <img src="/assets/box/models/Projetos/RecnPlay2025_2.heic" alt="RecnPlay 2025 2" />
+                    </div>
+                  </div>
+                  <p className="info-text">
+                    Atuei como <span className="highlight-blue">monitor de Back-End</span> no <span className="highlight-blue">Rec'n'Play 2025</span>, auxiliando participantes a aprender <span className="highlight-blue">Django</span>, corrigir erros em projetos e entender melhor como lidar com respostas da <span className="highlight-blue">inteligência artificial</span> no desenvolvimento.
+                  </p>
+                </div>
+              </>
+            ) : state.configKey === 'jirachi' ? (
+              <>
+                <div>
+                  <div className="prodtech-slider" style={{ position: 'relative', zIndex: 10 }}>
+                    <div className="prodtech-track">
+                      <img src="/assets/box/models/Projetos/raizes_0.jpg" alt="Raízes 0" />
+                      <img src="/assets/box/models/Projetos/raizes_1.jpg" alt="Raízes 1" />
+                    </div>
+                  </div>
+                  <p className="info-text" style={{ position: 'relative', zIndex: 10 }}>
+                    Participei do projeto <span className="highlight-blue">Raízes</span>, onde desenvolvi um <span className="highlight-blue">site com mini-game</span> que permite criar e personalizar personagens com diferentes etnias e estilos de cabelo.
+                  </p>
+
+                  <p className="info-text" style={{ position: 'relative', zIndex: 10 }}>
+                    O projeto tem como objetivo incentivar o <span className="highlight-blue">letramento racial</span> e o <span className="highlight-blue">combate ao racismo</span>, utilizando cultura, puzzles e quizzes para ajudar jovens e adultos a se identificarem e refletirem sobre diversidade.
+                  </p>
+                </div>
+              </>
             ) : (
               <>
                 <p className="info-text">
